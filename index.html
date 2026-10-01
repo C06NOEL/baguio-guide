@@ -55,7 +55,18 @@ h2 small{font-family:var(--body);font-size:13px;color:var(--muted);font-weight:4
 .menu b{font-size:12px;letter-spacing:.06em;color:var(--gold)}
 .menu ul{margin:2px 0 0;padding-left:18px;font-size:14px}
 .links{display:flex;flex-wrap:wrap;gap:6px 14px}
-@media (max-width:380px){.item{grid-template-columns:24px 1fr 64px}.art{width:64px;height:64px}}
+@media (max-width:560px){
+  .item{position:relative;grid-template-columns:24px 1fr;gap:4px 10px}
+  .art{position:absolute;top:12px;right:12px;width:48px;height:48px;border-radius:10px}
+  .item .top{padding-right:56px;min-height:48px;align-content:flex-start}
+}
+.also{font-size:12px;padding:1px 8px;border-radius:6px;border:1px dashed var(--line);color:var(--muted)}
+.far{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.far b{flex-basis:100%;font-size:13px;color:var(--muted);font-weight:500}
+.farchip{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--surface);color:var(--fg);padding:4px 10px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center}
+.farchip small{color:var(--muted);margin-left:6px;font-size:12px}
+.farchip[aria-pressed="true"]{border-color:var(--fg)}
+.farchip:focus-visible{outline:2px solid var(--berry);outline-offset:2px}
 .item.done{opacity:.55}
 .item.done .name{text-decoration:line-through;text-decoration-color:var(--done)}
 .check{width:22px;height:22px;margin-top:3px;accent-color:var(--pine);cursor:pointer}
@@ -93,7 +104,23 @@ h2 small{font-family:var(--body);font-size:13px;color:var(--muted);font-weight:4
 .facts{display:grid;grid-template-columns:auto 1fr;gap:2px 8px;margin:4px 0 6px;font-size:13.5px}
 .facts dt{color:var(--muted)}
 .facts dd{margin:0;font-variant-numeric:tabular-nums}
-.ref{font-size:11.5px;color:var(--gold)}
+.ref{font-size:11px;color:var(--gold);border:1px solid currentColor;border-radius:4px;padding:0 4px;margin-left:2px;white-space:nowrap;vertical-align:1px}
+.more{display:block;width:100%;margin-top:10px;font:inherit;font-size:14px;font-weight:700;color:var(--pine);background:var(--pine-soft);border:0;border-radius:12px;padding:10px;cursor:pointer}
+.more:focus-visible,.maptoggle:focus-visible{outline:2px solid var(--berry);outline-offset:2px}
+.chipwrap{position:relative}
+.chipwrap::after{content:"";position:absolute;top:0;right:0;bottom:2px;width:36px;background:linear-gradient(to right,transparent,var(--bg));pointer-events:none;transition:opacity .2s}
+.chipwrap.end::after{opacity:0}
+.tools{overflow:hidden;max-height:60px;transition:max-height .2s,margin-top .2s,opacity .2s}
+.bar.compact .tools{max-height:0;margin-top:0;opacity:0}
+#mapbox,#main section{scroll-margin-top:130px}
+.maptoggle{width:100%;display:flex;align-items:baseline;gap:10px;font:inherit;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;cursor:pointer;text-align:left}
+.maptoggle .mt-title{font-family:var(--display);font-size:18px;font-weight:900}
+.maptoggle small{color:var(--muted);font-size:13px;flex:1;min-width:0}
+.maptoggle .mt-act{font-size:13px;font-weight:700;color:var(--pine);white-space:nowrap}
+.maptoggle .mt-act::after{content:" ▾";display:inline-block;transition:transform .2s}
+.maptoggle[aria-expanded="true"]{border-radius:14px 14px 0 0;border-bottom:0}
+.maptoggle[aria-expanded="true"] .mt-act::after{transform:rotate(180deg)}
+#mapbody .mapwrap{border-radius:0 0 14px 14px}
 .linkbtn{font:inherit;font-size:13px;font-weight:700;background:none;border:0;padding:0;cursor:pointer;color:var(--pine)}
 .item.flash{outline:3px solid var(--berry);outline-offset:2px}
 [hidden]{display:none!important}
@@ -117,6 +144,24 @@ h2 small{font-family:var(--body);font-size:13px;color:var(--muted);font-weight:4
 .fgroup ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px;min-width:0}
 .fgroup li b{display:block;font-size:14.5px}
 .fgroup li span{display:block;font-size:13px;color:var(--muted)}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+@media (max-width:620px){.info{grid-template-columns:1fr}}
+.infocard{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px}
+.infocard h2{font-size:17px;margin-bottom:8px}
+.wxrow{display:flex;gap:18px;align-items:baseline}
+.wxtemp b{font-family:var(--display);font-size:30px;font-weight:900;font-variant-numeric:tabular-nums}
+.wxtemp span{color:var(--muted);margin-left:2px}
+.wxrain b{font-size:20px;color:var(--c-clothes);font-variant-numeric:tabular-nums}
+.wxrain span{font-size:13px;color:var(--muted);margin-left:4px}
+.wxdesc{margin:2px 0 6px}
+.tips{margin:4px 0 0;padding-left:18px;font-size:14px}
+.tips li+li{margin-top:2px}
+.spot{margin:0 0 4px;padding:8px 10px;border-radius:10px;background:var(--pine-soft)}
+.spot b{display:block;color:var(--pine)}
+.spot span{font-size:13px;color:var(--muted)}
+.sub{margin:10px 0 0;font-size:13px;font-weight:700;color:var(--gold)}
+.src{margin:10px 0 0;font-size:12px;color:var(--muted)}
+.src a{color:var(--pine);font-weight:700}
 footer{margin-top:36px;font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
 @media (prefers-reduced-motion:no-preference){.item{transition:opacity .2s}}
 </style>
@@ -131,8 +176,42 @@ footer{margin-top:36px;font-size:12px;color:var(--muted);border-top:1px solid va
     <div class="meta"><span>步行為主</span><span>週末 Session Road 很塞</span></div>
   </header>
 
+  <div class="info">
+    <section class="infocard wx" aria-labelledby="wx-h">
+      <h2 id="wx-h">10/2（五）天氣</h2>
+      <div class="wxrow">
+        <div class="wxtemp"><b>17–24</b><span>°C</span></div>
+        <div class="wxrain"><b>90%</b><span>降雨機率</span></div>
+      </div>
+      <p class="wxdesc">局部多雲到多雲，有陣雨或雷雨。</p>
+      <ul class="tips">
+        <li>帶摺傘或輕便雨衣；早晚約 17°C，加一件薄外套</li>
+        <li>下雨時 Burnham Park 划船、Wright Park 騎馬可能暫停，可改逛 SM 和 BenCab 美術館</li>
+        <li>雨天叫車的人多，回程提早叫</li>
+      </ul>
+      <p class="src">來源：PAGASA 菲律賓氣象局（10/1 08:00 發布）。出發前請再<a href="https://www.pagasa.dost.gov.ph/weather/weather-outlook-selected-philippine-cities" target="_blank" rel="noopener">看最新預報 ↗</a></p>
+    </section>
+    <section class="infocard grab" aria-labelledby="grab-h">
+      <h2 id="grab-h">在哪裡等 Grab</h2>
+      <p class="spot"><b>SM 主入口計程車道</b><span>Main Entrance Taxi Lane（Luneta Hill Drive 這側）</span></p>
+      <ul class="tips">
+        <li>有屋頂的單向車道，上下車區離主入口只有十幾公尺，下雨也不會淋濕</li>
+        <li>在 App 裡把上車點拉到「SM City Baguio Main Entrance」，備註寫「taxi lane」</li>
+        <li>Grab 在碧瑤很多是 GrabTaxi（跳錶計程車）；叫不到車也可以直接在同一條車道排隊搭計程車，上車確認有跳錶</li>
+      </ul>
+      <p class="sub">回程叫車</p>
+      <ul class="tips">
+        <li>景點：上車點設在正門或售票口</li>
+        <li>夜市：Harrison Road 擺攤時車進不來，走到 Session Road 或 Burnham Park 邊的大路再叫</li>
+        <li>週五傍晚 Session Road 很塞，可以先走回 SM 再上車</li>
+      </ul>
+      <p class="src">SM 官方沒有公告 Grab 專用上車點，以上是依商場車道配置整理；現場如有指示牌，以指示牌為準。</p>
+    </section>
+  </div>
+
+  <div id="barsentinel" aria-hidden="true"></div>
   <div class="bar">
-    <div class="chips" id="chips" role="toolbar" aria-label="分類"></div>
+    <div class="chipwrap" id="chipwrap"><div class="chips" id="chips" role="toolbar" aria-label="分類"></div></div>
     <div class="tools">
       <input id="q" type="search" placeholder="搜尋：草莓、炸雞、咖啡…" aria-label="搜尋">
       <label class="toggle"><input type="checkbox" id="hideDone"> 隱藏已完成</label>
@@ -140,10 +219,13 @@ footer{margin-top:36px;font-size:12px;color:var(--muted);border-top:1px solid va
   </div>
 
   <section id="mapbox">
-    <h2>周邊地圖<small>示意圖・位置為大約方位</small></h2>
-    <div class="mapwrap"><div id="map"></div></div>
-    <p class="maphint">點圓點看該地點有哪些項目；數字是項目數。虛線箭頭是較遠、需要搭車的地點。</p>
-    <div id="pop" hidden></div>
+    <button type="button" class="maptoggle" id="maptoggle" aria-expanded="false" aria-controls="mapbody"><span class="mt-title">周邊地圖</span><small>示意圖・位置為大約方位</small><span class="mt-act">展開</span></button>
+    <div id="mapbody" hidden>
+      <div class="mapwrap"><div id="map"></div></div>
+      <p class="maphint">點圓點看該地點有哪些項目；數字是項目數。</p>
+      <div class="far" id="far"></div>
+      <div id="pop" hidden></div>
+    </div>
   </section>
   <div class="progress" id="progress"></div>
   <main id="main"></main>
@@ -285,13 +367,13 @@ const ITEMS=[
   {id:"tajimaya",cat:"rated",name:"Tajimaya Charcoal Grill",en:"日式炭火燒肉",dist:"約 800 公尺",walk:true,rating:4.7,reviews:485,hours:"請看 Google",desc:"自己烤的炭火燒肉，肉的醃料調味很受好評。",q:"Tajimaya Charcoal Grill Baguio"},
   {id:"witchcraft",cat:"rated",name:"The Gallery by Witchcraft",en:"酒吧・地中海料理",dist:"約 800 公尺",walk:true,rating:4.7,reviews:237,hours:"請看 Google",desc:"酒吧兼餐廳，氣氛好，評論說物有所值。",q:"The Gallery by Witchcraft Baguio"},
   {id:"redrustikz",cat:"rated",name:"Red Rustikz",en:"義式・美式",dist:"約 500 公尺",walk:true,rating:4.5,reviews:159,hours:"請看 Google",desc:"義大利麵、披薩、排餐類，評價穩定。",q:"Red Rustikz Baguio"},
-  {id:"rhill",cat:"rated",name:"Hill Station",en:"菲式・國際料理",dist:"約 150 公尺",walk:true,rating:4.2,reviews:613,p:"hill",hours:"週一–四 7:30–22:00・週五–日 7:00–22:00",ok:true,desc:"評論數最多的老字號之一，燉羊肉、菲力牛排受推薦。",q:"Hill Station Baguio"},
+  {id:"rhill",same:"hill",cat:"rated",name:"Hill Station",en:"菲式・國際料理",dist:"約 150 公尺",walk:true,rating:4.2,reviews:613,p:"hill",hours:"週一–四 7:30–22:00・週五–日 7:00–22:00",ok:true,desc:"評論數最多的老字號之一，燉羊肉、菲力牛排受推薦。",q:"Hill Station Baguio"},
   {id:"marios",cat:"rated",name:"Mario's Restaurant",en:"西班牙菜",dist:"約 800 公尺",walk:true,rating:4.2,reviews:142,hours:"請看 Google",desc:"碧瑤的西班牙菜老餐廳。",q:"Mario's Restaurant Baguio"},
   {id:"fortune",cat:"rated",name:"Fortune Hong Kong Seafood",en:"港式海鮮",dist:"約 800 公尺",walk:true,rating:4.2,reviews:74,hours:"請看 Google",desc:"港式海鮮與點心，適合多人合菜。",q:"Fortune Hong Kong Seafood Baguio"},
   {id:"tsokolateria",cat:"rated",name:"Tsokolateria",en:"熱可可・菲式",dist:"約 150 公尺",walk:true,rating:4.1,reviews:80,hours:"請看 Google",desc:"傳統菲律賓熱可可 tsokolate，配 suman 糯米糕。",q:"Tsokolateria Baguio"},
   {id:"chaya",cat:"rated",name:"Chaya",en:"日式・壽司",dist:"約 800 公尺",walk:true,rating:4.1,reviews:213,hours:"請看 Google",desc:"老牌日式餐廳，壽司與定食。",q:"Chaya Baguio"},
-  {id:"rgulay",cat:"rated",name:"Oh My Gulay",en:"素食・藝術咖啡館",dist:"約 300 公尺",walk:true,rating:4.0,reviews:253,p:"gulay",hours:"約 11:00–20:00",desc:"藝術裝置環繞的素食餐廳，菜色選擇多。",q:"Oh My Gulay Baguio"},
-  {id:"rgoodtaste",cat:"rated",name:"Goodtaste Restaurant",en:"中式・菲式",dist:"約 800 公尺",walk:true,rating:4.0,reviews:1026,p:"goodtaste",hours:"24 小時營業",desc:"評論數破千的平價名店，份量大。",q:"Goodtaste Restaurant Baguio"},
+  {id:"rgulay",same:"gulay",cat:"rated",name:"Oh My Gulay",en:"素食・藝術咖啡館",dist:"約 300 公尺",walk:true,rating:4.0,reviews:253,p:"gulay",hours:"約 11:00–20:00",desc:"藝術裝置環繞的素食餐廳，菜色選擇多。",q:"Oh My Gulay Baguio"},
+  {id:"rgoodtaste",same:"goodtaste",cat:"rated",name:"Goodtaste Restaurant",en:"中式・菲式",dist:"約 800 公尺",walk:true,rating:4.0,reviews:1026,p:"goodtaste",hours:"24 小時營業",desc:"評論數破千的平價名店，份量大。",q:"Goodtaste Restaurant Baguio"},
   {id:"canto",cat:"rated",name:"Canto Bogchi Joint",en:"燒烤・牛排",dist:"約 500 公尺",walk:true,rating:4.0,reviews:93,hours:"請看 Google",desc:"燒烤和牛排，價格親民。",q:"Canto Bogchi Joint Baguio"},
   {id:"sage",cat:"rated",name:"Sage",en:"菲式・國際料理",dist:"約 800 公尺",walk:true,rating:4.0,reviews:81,hours:"請看 Google",desc:"菲式與國際料理都有，評價穩定。",q:"Sage Baguio"}
 ];
@@ -416,7 +498,18 @@ const KEY="baguio-sm-done-v1";
 let done={};
 try{done=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(e){done={}}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(done))}catch(e){}}
-let state={cat:"all",q:"",hide:false,pin:null};
+// 同一家店出現在兩個分類時共用完成狀態
+const keyOf=it=>it.same||it.id;
+const isDone=it=>!!done[keyOf(it)];
+ITEMS.forEach(it=>{if(it.same&&done[it.id]){done[it.same]=1;delete done[it.id]}});
+const TWIN={};ITEMS.forEach(it=>{if(it.same)(TWIN[it.same]=TWIN[it.same]||[]).push(it)});
+const twinsOf=it=>it.same?[ITEMS.find(x=>x.id===it.same),...TWIN[it.same].filter(x=>x!==it)]:(TWIN[it.id]||[]);
+// 地圖上太擠的點合併成一個群組
+const CLUSTER={session:"sessionarea",portavaga:"sessionarea",gulay:"sessionarea",ililikha:"sessionarea"};
+const pinOf=p=>CLUSTER[p]||p;
+let state={cat:"all",q:"",hide:false,pin:null,open:{},mapOpen:false};
+try{state.mapOpen=localStorage.getItem(KEY+"-map")==="1"}catch(e){}
+const PREVIEW=4;
 try{const c=localStorage.getItem(KEY+"-cat");if(c&&CATS.some(x=>x.id===c))state.cat=c}catch(e){}
 const hash=location.hash.slice(1);if(CATS.some(x=>x.id===hash))state.cat=hash;
 const catOf=id=>CATS.find(c=>c.id===id);
@@ -435,7 +528,7 @@ document.getElementById("hideDone").addEventListener("change",e=>{state.hide=e.t
 
 function esc(s){return String(s).replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]))}
 function match(it){
-  if(state.hide&&done[it.id])return false;
+  if(state.hide&&isDone(it))return false;
   if(state.cat!=="all"&&it.cat!==state.cat)return false;
   if(!state.q)return true;
   return [it.name,it.en,it.desc,it.floor||"",(it.buy||[]).join(" "),(MENU[it.id]||[]).join(" ")].join(" ").toLowerCase().includes(state.q);
@@ -452,13 +545,14 @@ const NOTES={
 const mapUrl=it=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(it.q+", Baguio, Philippines");
 function card(it){
   const map=mapUrl(it);
-  return `<article class="item${done[it.id]?" done":""}" id="card-${it.id}">
-    <input class="check" type="checkbox" id="c-${it.id}" ${done[it.id]?"checked":""} aria-label="${esc(it.name)} 已完成">
+  const tw=twinsOf(it);
+  return `<article class="item${isDone(it)?" done":""}" id="card-${it.id}">
+    <input class="check" type="checkbox" id="c-${it.id}" data-key="${keyOf(it)}" ${isDone(it)?"checked":""} aria-label="${esc(it.name)} 已完成">
     <div class="body">
       <div class="top"><label class="name" for="c-${it.id}">${esc(it.name)}</label><span class="en">${esc(it.en)}</span></div>
-      <div class="tags">${it.rating?`<span class="tag star">★ ${it.rating.toFixed(1)}<small>${it.reviews.toLocaleString()} 則${it.src?" · "+it.src:""}</small></span>`:""}${it.must?'<span class="tag must">必去必買</span>':""}<span class="tag ${it.walk?"walk":"ride"}">${esc(it.dist)}</span></div>
+      <div class="tags">${it.rating?`<span class="tag star">★ ${it.rating.toFixed(1)}<small>${it.reviews.toLocaleString()} 則${it.src?" · "+it.src:""}</small></span>`:""}${it.must?'<span class="tag must">必去必買</span>':""}<span class="tag ${it.walk?"walk":"ride"}">${esc(it.dist)}</span>${tw.map(t=>`<span class="also">同一家・也在「${esc(catOf(t.cat).label)}」</span>`).join("")}</div>
       <dl class="facts">
-        <dt>營業</dt><dd>${esc(it.hours)}${it.ok||it.hours==="請看 Google"?"":' <span class="ref">參考，出發前請確認</span>'}</dd>
+        <dt>營業</dt><dd>${esc(it.hours)}${it.ok||it.hours==="請看 Google"?"":' <span class="ref" title="未經官方確認，出發前請確認">參考</span>'}</dd>
         ${it.floor?`<dt>位置</dt><dd>${esc(it.floor)}</dd>`:""}
         ${it.fee?`<dt>門票</dt><dd>${esc(it.fee)}</dd>`:""}
         ${it.safe?`<dt>安全感</dt><dd>${esc(it.safe)}</dd>`:""}
@@ -466,7 +560,7 @@ function card(it){
       <p class="desc">${esc(it.desc)}</p>
       ${it.buy?`<ul class="buy">${it.buy.map(b=>`<li>${esc(b)}</li>`).join("")}</ul>`:""}
       ${MENU[it.id]?`<div class="menu"><b>招牌必點</b><ul>${MENU[it.id].map(m=>`<li>${esc(m)}</li>`).join("")}</ul></div>`:""}
-      <div class="links">${it.cat==="market"?`<a class="btn" href="https://www.google.com/search?tbm=isch&q=${encodeURIComponent(it.en+" Philippines")}" target="_blank" rel="noopener">看實品照片 ↗</a>`:`<a class="btn" href="${map}" target="_blank" rel="noopener">Google 評論・照片 ↗</a>`}${MENU[it.id]?`<a class="btn" href="${map}" target="_blank" rel="noopener">看菜單照片 ↗</a>`:""}${it.p||it.far?`<button class="btn linkbtn" type="button" data-pin="${it.far?"far:"+it.id:it.p}">在地圖上看</button>`:""}</div>
+      <div class="links">${it.cat==="market"?`<a class="btn" href="https://www.google.com/search?tbm=isch&q=${encodeURIComponent(it.en+" Philippines")}" target="_blank" rel="noopener">看實品照片 ↗</a>`:`<a class="btn" href="${map}" target="_blank" rel="noopener">Google 評論・照片 ↗</a>`}${MENU[it.id]?`<a class="btn" href="${map}" target="_blank" rel="noopener">看菜單照片 ↗</a>`:""}${it.p||it.far?`<button class="btn linkbtn" type="button" data-pin="${it.far?"far:"+it.id:pinOf(it.p)}">在地圖上看</button>`:""}</div>
     </div><span class="art" aria-hidden="true">${ART[ARTOF[it.id]]||""}</span></article>`;
 }
 
@@ -476,9 +570,12 @@ const W=400,H=Math.round(W*(B.lat1-B.lat0)/((B.lon1-B.lon0)*Math.cos(16.41*Math.
 const xy=([la,lo])=>[ (lo-B.lon0)/(B.lon1-B.lon0)*W, (B.lat1-la)/(B.lat1-B.lat0)*H ];
 const line=pts=>pts.map((p,i)=>(i?"L":"M")+xy(p).map(v=>v.toFixed(1)).join(" ")).join(" ");
 const PLACE_NAME={ililikha:"Ili-Likha 藝術村",portavaga:"Porta Vaga Mall",yifang:"一芳（Assumption Rd）",abanao:"Abanao Street",sm:"SM City Baguio",sky:"Sky Ranch",session:"Session Road",burnham:"Burnham Park",cathedral:"主教座堂",market:"公有市場",night:"夜市",goodtaste:"Good Taste",hill:"Hill Station",ruins:"Café by the Ruins",gulay:"Oh My Gulay",maharlika:"Maharlika"};
+P.sessionarea=[16.4117,120.5975];
+PLACE_NAME.sessionarea="Session Road 一帶";
+const textW=(t,fs)=>[...t].reduce((w,c)=>w+(c.charCodeAt(0)>0x2e80?fs:fs*0.62),0);
 function drawMap(list){
-  const groups={};
-  list.forEach(it=>{ if(it.p){(groups[it.p]=groups[it.p]||[]).push(it)} });
+  const groups={},seen=new Set();
+  list.forEach(it=>{ if(!it.p||it.far)return; const k=keyOf(it); if(seen.has(k))return; seen.add(k); const g=pinOf(it.p); (groups[g]=groups[g]||[]).push(it) });
   const fars=list.filter(it=>it.far);
   const [lx,ly]=xy([16.4122,120.5933]);
   let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="SM City Baguio 周邊示意地圖">
@@ -492,39 +589,47 @@ function drawMap(list){
     <path d="${line([[16.4098,120.5956],[16.4143,120.5952]])}" stroke-width="4"/>
     <path d="${line([[16.4086,120.6004],[16.4072,120.6030]])}" stroke-width="4"/>
   </g>
-  <g font-size="9" fill="var(--muted)" font-family="var(--body)">
-    <text x="${xy([16.4112,120.5986])[0]}" y="${xy([16.4112,120.5986])[1]}" transform="rotate(-38 ${xy([16.4112,120.5986]).join(" ")})">Session Rd</text>
+  <g font-size="10" fill="var(--muted)" font-family="var(--body)" opacity=".8">
     <text x="${xy([16.4163,120.5950])[0]}" y="${xy([16.4163,120.5950])[1]}" transform="rotate(-40 ${xy([16.4163,120.5950]).join(" ")})">Magsaysay Ave</text>
     <text x="${xy([16.4100,120.5959])[0]}" y="${xy([16.4100,120.5959])[1]}" transform="rotate(-88 ${xy([16.4100,120.5959]).join(" ")})">Harrison Rd</text>
   </g>
-  <g font-size="10" fill="var(--muted)" font-family="var(--body)"><text x="${W-22}" y="18" text-anchor="middle">N</text><path d="M${W-22} 22 l-5 12 l5 -3 l5 3z" fill="var(--muted)"/></g>`;
-  // far arrows
-  const [cx,cy]=xy(P.sm);
-  fars.forEach(it=>{
-    const f=FAR[it.id];const a=f.angle*Math.PI/180;
-    let r=1000,ex,ey;
-    const dx=Math.cos(a),dy=Math.sin(a);
-    const tx=dx>0?(W-14-cx)/dx:(14-cx)/dx, ty=dy>0?(H-14-cy)/dy:(14-cy)/dy;
-    r=Math.min(tx,ty);ex=cx+dx*r;ey=cy+dy*r;
-    const col=catOf(it.cat).color;
-    const anchor=ex>W/2?"end":"start";
-    s+=`<g class="pin" data-pin="far:${it.id}" tabindex="0" role="button" aria-label="${esc(it.name)}，${f.dir}${f.km}">
-      <path d="M${cx+dx*24} ${cy+dy*24} L${ex} ${ey}" stroke="${col}" stroke-width="1.5" stroke-dasharray="3 3"/>
-      <circle cx="${ex}" cy="${ey}" r="7" fill="${col}"/>
-      <text x="${ex+(anchor==="end"?-11:11)}" y="${ey+(ey<20?12:4)}" text-anchor="${anchor}" font-size="10" font-weight="700" fill="var(--fg)" paint-order="stroke" stroke="var(--map-bg)" stroke-width="3">${esc(f.label||(it.en.split(" ")[0]==="Good"?"Good Shepherd":it.en))}・${f.dir}${f.km}</text></g>`;
-  });
-  Object.entries(groups).forEach(([k,its])=>{
-    const [x,y]=xy(P[k]);
+  <g font-size="11" fill="var(--muted)" font-family="var(--body)"><text x="${W-22}" y="18" text-anchor="middle">N</text><path d="M${W-22} 22 l-5 12 l5 -3 l5 3z" fill="var(--muted)"/></g>`;
+  // 圓點與標籤：標籤依序嘗試右、左、上、下，選擇不和其他圓點、標籤重疊的位置
+  const FS=13,R=12;
+  const pts=Object.entries(groups).map(([k,its])=>({k,its,x:xy(P[k])[0],y:xy(P[k])[1]}));
+  const boxes=pts.map(p=>({x:p.x-R,y:p.y-R,w:2*R,h:2*R}));
+  const hit=(a,b)=>a.x<b.x+b.w&&b.x<a.x+a.w&&a.y<b.y+b.h&&b.y<a.y+a.h;
+  const ov=(a,b)=>Math.max(0,Math.min(a.x+a.w,b.x+b.w)-Math.max(a.x,b.x))*Math.max(0,Math.min(a.y+a.h,b.y+b.h)-Math.max(a.y,b.y));
+  let dots="",labels="";
+  pts.forEach(p=>{
+    const {k,its,x,y}=p;
     const cats=[...new Set(its.map(i=>i.cat))];
     const col=cats.length===1?catOf(cats[0]).color:"var(--pine)";
     const sel=state.pin===k;
-    const label=PLACE_NAME[k];
-    const right=x<W-90;
-    s+=`<g class="pin${sel?" sel":""}" data-pin="${k}" tabindex="0" role="button" aria-label="${esc(label)}，${its.length} 項">
-      <circle cx="${x}" cy="${y}" r="${sel?13:11}" fill="${col}" stroke="var(--map-bg)" stroke-width="2"/>
-      <text x="${x}" y="${y+4}" text-anchor="middle" font-size="11" font-weight="700" fill="var(--map-bg)">${its.length}</text>
-      <text x="${right?x+15:x-15}" y="${y+4}" text-anchor="${right?"start":"end"}" font-size="10.5" font-weight="700" fill="var(--fg)" paint-order="stroke" stroke="var(--map-bg)" stroke-width="3">${esc(label)}</text></g>`;
+    const label=PLACE_NAME[k],tw=textW(label,FS),m=FS*.36;
+    const cands=[["start",x+R+4,y+m],["end",x-R-4,y+m],["middle",x,y-R-5],["middle",x,y+R+FS+1],
+      ["start",x+R+2,y-R+2],["end",x-R-2,y-R+2],["start",x+R+2,y+R+FS-4],["end",x-R-2,y+R+FS-4],
+      ["start",x+R+4,y+m-10],["start",x+R+4,y+m+10],["end",x-R-4,y+m-10],["end",x-R-4,y+m+10]];
+    let best=null;
+    cands.forEach(([a,tx,ty],i)=>{
+      let bx=a==="start"?tx:a==="end"?tx-tw:tx-tw/2;
+      if(a==="middle"){bx=Math.min(Math.max(bx,4),W-4-tw);tx=bx+tw/2}
+      const b={x:bx-2,y:ty-FS+1,w:tw+4,h:FS+3};
+      let sc=boxes.reduce((t,o)=>t+ov(o,b),0)+i*2;
+      if(b.x<2||b.x+b.w>W-2||b.y<2||b.y+b.h>H-2)sc+=5000;
+      if(!best||sc<best.sc)best={a,tx,ty,b,sc};
+    });
+    boxes.push(best.b);
+    labels+=`<g class="pin" data-pin="${k}"><text x="${best.tx}" y="${best.ty}" text-anchor="${best.a}" font-size="${FS}" font-weight="700" fill="var(--fg)" paint-order="stroke" stroke="var(--map-bg)" stroke-width="3.5">${esc(label)}</text></g>`;
+    dots+=`<g class="pin${sel?" sel":""}" data-pin="${k}" tabindex="0" role="button" aria-label="${esc(label)}，${its.length} 項">
+      <circle cx="${x}" cy="${y}" r="${sel?R+2:R}" fill="${col}" stroke="var(--map-bg)" stroke-width="2"/>
+      <text x="${x}" y="${y+4.5}" text-anchor="middle" font-size="12" font-weight="700" fill="var(--map-bg)">${its.length}</text></g>`;
   });
+  s+=labels+dots;
+  // 地圖範圍外、需要搭車的地點改列在地圖下方
+  const farEl=document.getElementById("far");
+  farEl.innerHTML=fars.length?`<b>需要搭車（不在地圖範圍內，方位與距離從 SM 算）</b>`+fars.map(it=>{const f=FAR[it.id];return `<button type="button" class="farchip" data-pin="far:${it.id}" aria-pressed="${state.pin==="far:"+it.id}"><i class="dot" style="background:${catOf(it.cat).color}"></i>${esc(it.name)}<small>${f.dir}・${f.km.replace("約 ","")}</small></button>`}).join(""):"";
+  farEl.querySelectorAll(".farchip").forEach(b=>b.onclick=()=>{state.pin=state.pin===b.dataset.pin?null:b.dataset.pin;render(true)});
   s+="</svg>";
   document.getElementById("map").innerHTML=s;
   document.querySelectorAll("#map .pin").forEach(g=>{
@@ -536,15 +641,16 @@ function drawMap(list){
   const pop=document.getElementById("pop");
   if(!state.pin){pop.hidden=true;return}
   let its,title;
-  if(state.pin.startsWith("far:")){const id=state.pin.slice(4);its=list.filter(i=>i.id===id);const f=FAR[id];title=`從 SM 往${f.dir}${f.km}，建議搭計程車`}
+  if(state.pin.startsWith("far:")){const id=state.pin.slice(4);its=list.filter(i=>i.id===id);const f=FAR[id];title=`從 SM 往${f.dir}${f.km}・在 SM 主入口計程車道叫 Grab`}
   else{its=groups[state.pin]||[];title=PLACE_NAME[state.pin]}
   if(!its.length){pop.hidden=true;return}
   pop.hidden=false;
   pop.innerHTML=`<div class="pophead"><b>${esc(title)}</b><button type="button" class="x" aria-label="關閉">×</button></div>
-    <div class="poplist">${its.map(i=>`<button type="button" class="popitem" data-go="${i.id}"><i class="dot" style="background:${catOf(i.cat).color}"></i>${esc(i.name)}<span>${esc(i.hours)}</span></button>`).join("")}</div>`;
+    <div class="poplist">${its.map(i=>`<button type="button" class="popitem" data-go="${i.id}"><i class="dot" style="background:${catOf(i.cat).color}"></i>${esc(i.name)}<span>${state.pin==="sessionarea"?esc(PLACE_NAME[i.p])+"・":""}${esc(i.hours)}</span></button>`).join("")}</div>`;
   pop.querySelector(".x").onclick=()=>{state.pin=null;render(true)};
   pop.querySelectorAll(".popitem").forEach(b=>b.onclick=()=>{
-    const el=document.getElementById("card-"+b.dataset.go);
+    let el=document.getElementById("card-"+b.dataset.go);
+    if(!el){const it=ITEMS.find(i=>i.id===b.dataset.go);if(it){state.open[it.cat]=true;render(true);el=document.getElementById("card-"+it.id)}}
     if(el){el.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"center"});el.classList.add("flash");setTimeout(()=>el.classList.remove("flash"),1400)}
   });
 }
@@ -569,8 +675,36 @@ function renderFloors(){
   html+=`<p class="maphint">樓層資料來自 SM Supermalls 官方店家頁與美食介紹、Wikipedia；SM City Baguio 約有 250 家店，這裡列的是查得到的主要店家，不是完整名單。</p></section>`;
   return html;
 }
+// 地圖預設收合
+const mapToggle=document.getElementById("maptoggle"),mapBody=document.getElementById("mapbody");
+function setMap(open){
+  state.mapOpen=open;mapBody.hidden=!open;mapToggle.setAttribute("aria-expanded",open);
+  mapToggle.querySelector(".mt-act").textContent=open?"收合":"展開";
+  try{localStorage.setItem(KEY+"-map",open?"1":"0")}catch(e){}
+}
+mapToggle.addEventListener("click",()=>setMap(!state.mapOpen));
+setMap(state.mapOpen);
+// 分類列：右側漸層提示還能滑，選到的分類自動捲進畫面
+const chipWrap=document.getElementById("chipwrap");
+const chipEnd=()=>chipWrap.classList.toggle("end",chips.scrollLeft+chips.clientWidth>=chips.scrollWidth-4);
+chips.addEventListener("scroll",chipEnd,{passive:true});addEventListener("resize",chipEnd);
+// 往下捲時收起搜尋列，往上捲再出現
+const bar=document.querySelector(".bar"),sentinel=document.getElementById("barsentinel"),qEl=document.getElementById("q");
+let lastY=scrollY,lockUntil=0;
+addEventListener("scroll",()=>{
+  const y=scrollY,now=Date.now();
+  if(now<lockUntil){lastY=y;return}
+  const dy=y-lastY;if(Math.abs(dy)<12)return;lastY=y;
+  const stuck=sentinel.getBoundingClientRect().top<-20;
+  const want=dy>0&&stuck&&document.activeElement!==qEl&&!qEl.value;
+  if(want!==bar.classList.contains("compact")){bar.classList.toggle("compact",want);lockUntil=now+350}
+},{passive:true});
+qEl.addEventListener("focus",()=>bar.classList.remove("compact"));
 function render(keepScroll){
   chips.querySelectorAll(".chip").forEach(b=>b.setAttribute("aria-pressed",b.dataset.id===state.cat));
+  const act=chips.querySelector('[aria-pressed="true"]');
+  if(act&&(act.offsetLeft<chips.scrollLeft||act.offsetLeft+act.offsetWidth>chips.scrollLeft+chips.clientWidth))chips.scrollTo({left:act.offsetLeft-16,behavior:"smooth"});
+  chipEnd();
   const fl=state.cat==="floors";
   document.getElementById("mapbox").hidden=fl;
   document.getElementById("progress").hidden=fl;
@@ -584,17 +718,24 @@ function render(keepScroll){
     const l=list.filter(i=>i.cat===c.id);
     if(c.id==="rated")l.sort((x,y)=>y.rating-x.rating||y.reviews-x.reviews);
     if(!l.length)return;
-    html+=`<section><h2><i class="dot big" style="background:${c.color}"></i>${c.label}<small>${c.sub} · ${l.length} 項</small></h2>${NOTES[c.id]?`<p class="maphint">${NOTES[c.id]}</p>`:""}<div class="list">${l.map(card).join("")}</div></section>`;
+    const canFold=state.cat==="all"&&!state.q&&l.length>PREVIEW;
+    const folded=canFold&&!state.open[c.id];
+    const shown=folded?l.slice(0,PREVIEW):l;
+    html+=`<section id="sec-${c.id}"><h2><i class="dot big" style="background:${c.color}"></i>${c.label}<small>${c.sub} · ${l.length} 項</small></h2>${NOTES[c.id]?`<p class="maphint">${NOTES[c.id]}</p>`:""}<div class="list">${shown.map(card).join("")}</div>${canFold?`<button type="button" class="more" data-more="${c.id}" aria-expanded="${!folded}">${folded?`看全部 ${l.length} 項（還有 ${l.length-PREVIEW} 項）`:"收合"}</button>`:""}</section>`;
   });
   document.getElementById("main").innerHTML=html||`<p class="empty">沒有符合的項目，換個關鍵字試試。</p>`;
-  const scope=ITEMS.filter(i=>state.cat==="all"||i.cat===state.cat);
-  const n=scope.filter(i=>done[i.id]).length;
-  document.getElementById("progress").textContent=`已完成 ${n} / ${scope.length}`;
+  const keys=new Set(ITEMS.filter(i=>state.cat==="all"||i.cat===state.cat).map(keyOf));
+  const n=[...keys].filter(k=>done[k]).length;
+  document.getElementById("progress").textContent=`已完成 ${n} / ${keys.size}・營業時間標「參考」的未經官方確認`;
   document.querySelectorAll(".check").forEach(cb=>cb.addEventListener("change",()=>{
-    const id=cb.id.slice(2);if(cb.checked)done[id]=1;else delete done[id];save();render(true);
+    const k=cb.dataset.key;if(cb.checked)done[k]=1;else delete done[k];save();render(true);
+  }));
+  document.querySelectorAll(".more").forEach(b=>b.addEventListener("click",()=>{
+    const id=b.dataset.more,wasOpen=!!state.open[id];state.open[id]=!wasOpen;render(true);
+    if(wasOpen)document.getElementById("sec-"+id).scrollIntoView({block:"start"});
   }));
   document.querySelectorAll("[data-pin].linkbtn").forEach(b=>b.addEventListener("click",()=>{
-    state.pin=b.dataset.pin;render(true);
+    state.pin=b.dataset.pin;setMap(true);render(true);
     document.getElementById("mapbox").scrollIntoView({behavior:"smooth",block:"start"});
   }));
 }
