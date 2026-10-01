@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>碧瑤 SM 周邊指南</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+/* Layout: mountain-town field guide — pine header, sticky category chips, one column of entries with a "checked off" state */
+:root{
+  --bg:#f3f5f1; --surface:#ffffff; --fg:#1d2a22; --muted:#5d6b62; --line:#dbe2dc;
+  --pine:#1f4d3a; --pine-soft:#e3ece6; --berry:#c8324a; --berry-soft:#fbe6ea;
+  --gold:#a56a12; --gold-soft:#f8eedc; --done:#8a958e; --art-bg:#eaf0ec; --map-bg:#eef1ea; --map-park:#cfe3d3; --map-water:#9ccbe0; --map-road:#ffffff; --map-pine:#5f9a78; --c-spot:#1f6d50; --c-snack:#c8324a; --c-chicken:#d0761b; --c-cafe:#7a4a24; --c-clothes:#3f63b8; --c-rated:#a56a12; --c-market:#8a5a12; --c-drink:#6b4a8f; --c-ice:#c2557a; --c-nail:#b0306a; --c-girls:#1b7a8c;
+  --display:"Noto Serif TC","Songti TC",serif;
+  --body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121815; --surface:#1a221e; --fg:#e6ece8; --muted:#9aa89f; --line:#2b3630;
+  --pine:#7cc0a0; --pine-soft:#1f3229; --berry:#ff7d90; --berry-soft:#3a1d24;
+  --gold:#e3b265; --gold-soft:#352a17; --done:#6c7871; --art-bg:#26332c; --map-bg:#18201c; --map-park:#22392c; --map-water:#2b5568; --map-road:#3a4640; --map-pine:#3f6d55; --c-spot:#5cc093; --c-snack:#ff7d90; --c-chicken:#f0a04b; --c-cafe:#c99a6a; --c-clothes:#8fa8ec; --c-rated:#e3b265; --c-market:#e0b070; --c-drink:#b99be0; --c-ice:#f29ab8; --c-nail:#f07aae; --c-girls:#6cc6d6; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121815; --surface:#1a221e; --fg:#e6ece8; --muted:#9aa89f; --line:#2b3630;
+  --pine:#7cc0a0; --pine-soft:#1f3229; --berry:#ff7d90; --berry-soft:#3a1d24;
+  --gold:#e3b265; --gold-soft:#352a17; --done:#6c7871; --art-bg:#26332c; --map-bg:#18201c; --map-park:#22392c; --map-water:#2b5568; --map-road:#3a4640; --map-pine:#3f6d55; --c-spot:#5cc093; --c-snack:#ff7d90; --c-chicken:#f0a04b; --c-cafe:#c99a6a; --c-clothes:#8fa8ec; --c-rated:#e3b265; --c-market:#e0b070; --c-drink:#b99be0; --c-ice:#f29ab8; --c-nail:#f07aae; --c-girls:#6cc6d6; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.6;margin:0}
+.wrap{max-width:720px;margin:0 auto;padding-inline:16px;padding-block:0 48px}
+header{padding-block:28px 18px}
+.eyebrow{font-size:12px;letter-spacing:.12em;color:var(--pine);font-weight:700}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(28px,7vw,40px);line-height:1.15;margin:6px 0 10px;text-wrap:balance}
+h1 em{font-style:normal;color:var(--berry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;font-size:13px}
+.meta span{background:var(--pine-soft);color:var(--pine);padding:3px 10px;border-radius:999px;font-weight:500}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line)}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;font:inherit;font-size:14px;font-weight:500;border:1px solid var(--line);background:var(--surface);color:var(--fg);padding:6px 14px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--pine);border-color:var(--pine);color:var(--bg)}
+.chip:focus-visible,.btn:focus-visible,input:focus-visible{outline:2px solid var(--berry);outline-offset:2px}
+.tools{display:flex;gap:8px;margin-top:10px;align-items:center}
+#q{flex:1;min-width:0;font:inherit;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--fg)}
+.toggle{font-size:13px;color:var(--muted);display:flex;gap:6px;align-items:center;white-space:nowrap}
+.progress{font-size:13px;color:var(--muted);margin:14px 0 4px;font-variant-numeric:tabular-nums}
+section{margin-top:22px}
+h2{font-family:var(--display);font-size:20px;margin:0 0 4px;display:flex;align-items:baseline;gap:10px}
+h2 small{font-family:var(--body);font-size:13px;color:var(--muted);font-weight:400}
+.list{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;grid-template-columns:28px 1fr 84px;gap:4px 12px;align-items:start}
+.art{width:84px;height:84px;border-radius:12px;background:var(--art-bg);display:block;overflow:hidden}
+.art svg{width:100%;height:100%;display:block}
+.menu{margin-top:8px;padding:8px 10px;border-radius:10px;background:var(--gold-soft)}
+.menu b{font-size:12px;letter-spacing:.06em;color:var(--gold)}
+.menu ul{margin:2px 0 0;padding-left:18px;font-size:14px}
+.links{display:flex;flex-wrap:wrap;gap:6px 14px}
+@media (max-width:380px){.item{grid-template-columns:24px 1fr 64px}.art{width:64px;height:64px}}
+.item.done{opacity:.55}
+.item.done .name{text-decoration:line-through;text-decoration-color:var(--done)}
+.check{width:22px;height:22px;margin-top:3px;accent-color:var(--pine);cursor:pointer}
+.body{min-width:0}
+.top{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px}
+.name{font-weight:700;font-size:16px}
+.en{color:var(--muted);font-size:13px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.tag{font-size:12px;padding:1px 8px;border-radius:6px;background:var(--pine-soft);color:var(--pine)}
+.tag.walk{background:var(--pine-soft);color:var(--pine)}
+.tag.ride{background:var(--gold-soft);color:var(--gold)}
+.tag.must{background:var(--berry-soft);color:var(--berry);font-weight:700}
+.desc{margin:0;color:var(--fg)}
+.buy{margin:6px 0 0;padding-left:18px;color:var(--muted);font-size:14px}
+.links{margin-top:8px}
+.btn{font-size:13px;color:var(--pine);font-weight:700;text-decoration:none}
+.btn:hover{text-decoration:underline}
+.empty{color:var(--muted);padding:24px 0;text-align:center}
+#mapbox{margin-top:16px}
+#mapbox h2{margin-bottom:8px}
+.mapwrap{position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--map-bg)}
+#map svg{display:block;width:100%;height:auto}
+.pin{cursor:pointer}
+.pin:focus-visible circle{stroke:var(--berry);stroke-width:3}
+.pin.sel circle{stroke:var(--fg)}
+.maphint{font-size:12px;color:var(--muted);margin:6px 2px 0}
+#pop{border:1px solid var(--line);border-radius:12px;background:var(--surface);margin-top:8px;padding:10px 12px}
+.pophead{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.x{font:inherit;font-size:20px;line-height:1;border:0;background:none;color:var(--muted);cursor:pointer;padding:0 4px}
+.poplist{display:flex;flex-direction:column;gap:4px;margin-top:6px}
+.popitem{font:inherit;text-align:left;border:0;background:var(--bg);color:var(--fg);border-radius:8px;padding:7px 10px;cursor:pointer;display:flex;flex-wrap:wrap;align-items:center;gap:2px 8px}
+.popitem span{font-size:12px;color:var(--muted);flex-basis:100%;padding-left:16px}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle;flex:none}
+.dot.big{width:10px;height:10px;margin-right:0}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:2px 8px;margin:4px 0 6px;font-size:13.5px}
+.facts dt{color:var(--muted)}
+.facts dd{margin:0;font-variant-numeric:tabular-nums}
+.ref{font-size:11.5px;color:var(--gold)}
+.linkbtn{font:inherit;font-size:13px;font-weight:700;background:none;border:0;padding:0;cursor:pointer;color:var(--pine)}
+.item.flash{outline:3px solid var(--berry);outline-offset:2px}
+[hidden]{display:none!important}
+.tag.star{background:var(--gold-soft);color:var(--gold);font-weight:700}
+.tag.star small{font-weight:400;margin-left:6px}
+/* floors */
+.chip.special{border-color:var(--berry);color:var(--berry);font-weight:700}
+.chip.special[aria-pressed="true"]{background:var(--berry);border-color:var(--berry);color:var(--bg)}
+.floors h2{flex-wrap:wrap}
+.zone{margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px}
+.zone.unknown{border-style:dashed}
+.zone h3{font-family:var(--display);font-size:17px;margin:0}
+.znote{margin:2px 0 0;color:var(--muted);font-size:13.5px}
+.floor{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.zone h3+.floor,.znote+.floor{border-top:0;padding-top:0}
+.lv{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
+.lvtag{font-weight:700;font-size:13px;background:var(--pine);color:var(--bg);padding:2px 10px;border-radius:6px;font-variant-numeric:tabular-nums}
+.feat{font-size:13px;color:var(--muted)}
+.fgroup{display:grid;grid-template-columns:72px 1fr;gap:8px;margin-top:6px}
+.fk{font-size:12px;color:var(--gold);font-weight:700;padding-top:2px}
+.fgroup ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px;min-width:0}
+.fgroup li b{display:block;font-size:14.5px}
+.fgroup li span{display:block;font-size:13px;color:var(--muted)}
+footer{margin-top:36px;font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+@media (prefers-reduced-motion:no-preference){.item{transition:opacity .2s}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">BAGUIO · LUNETA HILL</div>
+    <h1>SM City Baguio<br>周邊<em>必逛必買</em>清單</h1>
+    <p class="lede">以 SM City Baguio 為起點，多數地點走路就到。勾選已去過或已買到的項目，進度會記在這支手機的瀏覽器裡。</p>
+    <div class="meta"><span>步行為主</span><span>週末 Session Road 很塞</span></div>
+  </header>
+
+  <div class="bar">
+    <div class="chips" id="chips" role="toolbar" aria-label="分類"></div>
+    <div class="tools">
+      <input id="q" type="search" placeholder="搜尋：草莓、炸雞、咖啡…" aria-label="搜尋">
+      <label class="toggle"><input type="checkbox" id="hideDone"> 隱藏已完成</label>
+    </div>
+  </div>
+
+  <section id="mapbox">
+    <h2>周邊地圖<small>示意圖・位置為大約方位</small></h2>
+    <div class="mapwrap"><div id="map"></div></div>
+    <p class="maphint">點圓點看該地點有哪些項目；數字是項目數。虛線箭頭是較遠、需要搭車的地點。</p>
+    <div id="pop" hidden></div>
+  </section>
+  <div class="progress" id="progress"></div>
+  <main id="main"></main>
+
+  <footer>
+    地圖與插圖皆為示意；營業時間標「參考」者未經官方確認。實際店面、菜單照片與最新 Google 評論請點各項目的 Google 連結查看。資料整理於 2026 年 10 月。商場內連鎖店與營業時間可能變動，出發前請以 Google 地圖為準。步行時間為從 SM City Baguio 出發的粗估。
+  </footer>
+</div>
+
+<script>
+const CATS=[
+  {id:"all",label:"全部"},
+  {id:"spot",label:"景點",sub:"走走看看",color:"var(--c-spot)"},
+  {id:"snack",label:"必購零食",sub:"伴手禮與甜點",color:"var(--c-snack)"},
+  {id:"chicken",label:"炸雞小吃",sub:"肚子餓了",color:"var(--c-chicken)"},
+  {id:"cafe",label:"咖啡店",sub:"坐下來休息",color:"var(--c-cafe)"},
+  {id:"clothes",label:"服飾品牌",sub:"SM 品牌店與二手衣",color:"var(--c-clothes)"},
+  {id:"market",label:"超市零食",sub:"SM Supermarket 就買得到的菲律賓品牌",color:"var(--c-market)"},
+  {id:"drink",label:"台灣手搖飲",sub:"SM 裡就有好幾家",color:"var(--c-drink)"},
+  {id:"ice",label:"冰淇淋甜品",sub:"霜淇淋、優格冰、雪糕",color:"var(--c-ice)"},
+  {id:"nail",label:"美甲",sub:"SM 與 Session Road",color:"var(--c-nail)"},
+  {id:"rated",label:"高評價餐廳",sub:"步行約 10 分鐘內・4 星以上",color:"var(--c-rated)"},
+  {id:"floors",label:"SM 樓層導覽",special:true}
+];
+// 地圖座標為大約位置（示意用）
+const P={
+  sm:[16.4087,120.6002], sky:[16.4077,120.6013], session:[16.4113,120.5977], burnham:[16.4122,120.5932],
+  cathedral:[16.4137,120.5987], market:[16.4161,120.5937], night:[16.4127,120.5950], goodtaste:[16.4151,120.5961],
+  hill:[16.4094,120.5991], portavaga:[16.4122,120.5976], yifang:[16.4131,120.5968], abanao:[16.4142,120.5945], ililikha:[16.4120,120.5969], ruins:[16.4149,120.5918], gulay:[16.4119,120.5973], maharlika:[16.4156,120.5949]
+};
+// 不在地圖範圍內的地點：方位與大約距離
+const FAR={
+  ube:{dir:"東北",km:"約 3 公里",angle:-30},
+  batirol:{dir:"東南",km:"約 2 公里",angle:35},
+  easter:{dir:"西北",km:"約 2.5 公里",angle:-150},
+  cjh:{dir:"東南",km:"約 2 公里",angle:42,label:"Camp John Hay"},
+  botanical:{dir:"東",km:"約 1.5 公里",angle:-12,label:"植物園"},
+  wright:{dir:"東北",km:"約 2 公里",angle:-40,label:"Wright Park"},
+  bencab:{dir:"西",km:"約 6 公里",angle:-170,label:"BenCab 美術館"},
+  mirador:{dir:"西",km:"約 2.5 公里",angle:180,label:"Mirador"},
+  tamawan:{dir:"西北",km:"約 3.5 公里",angle:-125,label:"Tam-awan"},
+  stonekingdom:{dir:"西南",km:"約 3 公里",angle:172,label:"石頭王國"}
+};
+const MALL="週日–週五 10:00–21:00・週六 10:00–22:00";
+const ITEMS=[
+  // 景點
+  {id:"sm",cat:"spot",name:"SM City Baguio 露台",en:"SM City Baguio",dist:"起點",walk:true,p:"sm",hours:MALL,ok:true,desc:"半開放式商場，不開冷氣也涼。上層露台可以俯瞰 Burnham Park 和市區，傍晚最好看。",q:"SM City Baguio"},
+  {id:"skyranch",cat:"spot",name:"Sky Ranch 摩天輪",en:"Sky Ranch Baguio",dist:"SM 旁",walk:true,p:"sky",hours:"平日 10:00–22:00・週末假日 9:00–23:00",ok:true,desc:"商場旁的小型遊樂園，搭摩天輪看山城夜景。天候不佳可能暫停。",q:"Sky Ranch Baguio"},
+  {id:"session",cat:"spot",name:"Session Road 主街",en:"Session Road",dist:"步行 3 分",walk:true,must:true,p:"session",hours:"全天開放（店家約 8:00 後陸續開門）",desc:"碧瑤最熱鬧的主街，咖啡館、麵包店、餐廳一路排開，從 SM 往下坡走就是。",q:"Session Road Baguio"},
+  {id:"burnham",cat:"spot",name:"Burnham Park",en:"Burnham Park",dist:"步行 10 分",walk:true,must:true,p:"burnham",hours:"全天開放（划船、租車在白天）",desc:"碧瑤代表性公園，湖上划船、租腳踏車、散步，順便吃草莓豆花。",q:"Burnham Park Baguio"},
+  {id:"cathedral",cat:"spot",name:"碧瑤主教座堂",en:"Our Lady of Atonement Cathedral",dist:"步行 10 分",walk:true,p:"cathedral",hours:"約清晨至傍晚，彌撒時段請保持安靜",desc:"Session Road 旁的粉紅色教堂，爬一段階梯上去，拍照很好看。",q:"Baguio Cathedral"},
+  {id:"market",cat:"spot",name:"碧瑤公有市場",en:"Baguio City Public Market",dist:"步行 15 分",walk:true,must:true,p:"market",hours:"約清晨至傍晚，早上貨最齊",desc:"買伴手禮最划算的地方：草莓、果醬、花生糖、咖啡豆、蔬菜和編織品都有。",q:"Baguio City Public Market"},
+  {id:"night",cat:"spot",name:"Harrison Road 夜市",en:"Baguio Night Market",dist:"步行 10 分",walk:true,must:true,p:"night",hours:"約 21:00 開始到凌晨",desc:"挖二手衣、吃路邊小吃。帶零錢、注意包包。",q:"Baguio Night Market Harrison Road"},
+  {id:"cjh",cat:"spot",name:"Camp John Hay 松林區",en:"Camp John Hay",dist:"車程 10 分",walk:false,must:true,far:true,hours:"園區全天；歷史核心區白天開放",fee:"歷史核心區 ₱85",desc:"前美軍度假基地，現在是有門禁和警衛的園區，松林、草地、步道都很整齊。可以逛歷史核心區、Bell 圓形劇場，再到 Choco-late de Batirol 喝熱可可。",safe:"有管制、人不雜，最推薦。",q:"Camp John Hay Historical Core"},
+  {id:"botanical",cat:"spot",name:"碧瑤植物園",en:"Baguio Botanical Garden",dist:"車程 10 分",walk:false,far:true,hours:"每天 6:00–18:00",fee:"₱100",desc:"松林裡的花園步道，有雕塑和小橋，適合慢慢散步拍照。",safe:"收門票、白天開放，環境單純。",q:"Baguio Botanical Garden"},
+  {id:"wright",cat:"spot",name:"Wright Park・總統官邸",en:"Wright Park & The Mansion",dist:"車程 10 分",walk:false,far:true,hours:"白天",fee:"免費（騎馬 ₱200／30 分）",desc:"長長的倒影水池和松樹步道，對面就是總統夏季官邸 The Mansion 的鐵門，是經典拍照點。",safe:"白天人多但有秩序；牽馬的人會主動招攬，不想騎說 No 就好。",q:"Wright Park Baguio"},
+  {id:"bencab",cat:"spot",name:"BenCab 美術館",en:"BenCab Museum",dist:"車程 20 分",walk:false,must:true,far:true,hours:"週二–日 9:00–18:00（週一休）",fee:"₱200",desc:"菲律賓國家藝術家 BenCab 的美術館，建築漂亮，後面有梯田花園和池塘，館內 Café Sabel 可以坐看山谷。不能用閃光燈和腳架。",safe:"安靜、乾淨、遊客素質高，適合待半天。",q:"BenCab Museum"},
+  {id:"ililikha",cat:"spot",name:"Ili-Likha 藝術村",en:"Ili-Likha Artist Village",dist:"步行約 10 分",walk:true,p:"ililikha",hours:"每天 9:00–19:00",fee:"免費",desc:"藝術家 Kidlat Tahimik 用回收木料蓋的樹屋式藝術村，裡面有一攤攤小吃和咖啡，風格很特別。",safe:"就在 Session Road 旁，白天去；樓梯窄又陡，穿好走的鞋。",q:"Ili-Likha Artist Village"},
+  {id:"mirador",cat:"spot",name:"Mirador 和風公園",en:"Mirador Heritage & Eco Park",dist:"車程 15 分",walk:false,far:true,hours:"白天",fee:"₱100",desc:"有鳥居、竹林小徑和和平紀念碑，有點像在日本。山上視野好，人比市區景點少。",safe:"收門票、人少安靜。",q:"Mirador Heritage and Eco Spiritual Park"},
+  {id:"tamawan",cat:"spot",name:"Tam-awan 傳統村落",en:"Tam-awan Village",dist:"車程 20 分",walk:false,far:true,hours:"每天 7:00–20:00",fee:"₱60",desc:"重建的 Cordillera 傳統茅草屋村落，山坡上有藝廊，天氣好可以看到海。",safe:"收門票，環境單純；坡多，穿運動鞋。",q:"Tam-awan Village"},
+  {id:"stonekingdom",cat:"spot",name:"Igorot 石頭王國",en:"Igorot Stone Kingdom",dist:"車程 15 分",walk:false,far:true,hours:"每天 6:00–18:00",fee:"₱100",desc:"用石頭砌成的城牆和階梯，很像小型長城，拍照效果很好。",safe:"收門票；週末遊客多，平日比較舒服。",q:"Igorot Stone Kingdom"},
+
+  // 必購零食
+  {id:"ube",cat:"snack",name:"紫薯果醬",en:"Good Shepherd Ube Jam",dist:"車程 15 分",walk:false,must:true,far:true,hours:"白天營業，常常中午前就賣完",desc:"碧瑤伴手禮第一名，Good Shepherd 修道院的 Mountain Maid 品牌。",buy:["紫薯果醬 ube jam（招牌）","草莓果醬","貓舌餅 lengua de gato"],q:"Good Shepherd Convent Baguio"},
+  {id:"shortcake",cat:"snack",name:"Vizco's 草莓蛋糕",en:"Vizco's Strawberry Shortcake",dist:"SM／Session Road",walk:true,must:true,p:"session",hours:"SM 分店依商場時間；Session Road 店請看 Google",desc:"招牌草莓奶油蛋糕可內用也可外帶。SM 裡就有分店（Lower Ground 北側露台一帶），不用特地跑。",q:"Vizco's Baguio"},
+  {id:"strawberry",cat:"snack",name:"新鮮草莓",en:"Benguet Strawberries",dist:"市場",walk:true,must:true,p:"market",hours:"依市場時間，早上最新鮮",desc:"在公有市場買，比觀光區便宜，挑當天新鮮的。",q:"Baguio City Public Market"},
+  {id:"brittle",cat:"snack",name:"花生糖",en:"Peanut Brittle",dist:"市場",walk:true,must:true,p:"market",hours:"依市場時間",desc:"市場與伴手禮店都有，耐放好帶，適合分送同事。",q:"Baguio City Public Market"},
+  {id:"coffee",cat:"snack",name:"Benguet／Sagada 咖啡豆",en:"Cordillera Coffee Beans",dist:"市場",walk:true,p:"market",hours:"依市場時間",desc:"當地高山咖啡，市場買比咖啡店便宜很多，可請店家幫忙磨。",q:"Baguio City Public Market coffee"},
+  {id:"sundot",cat:"snack",name:"Sundot Kulangot",en:"Sundot Kulangot",dist:"市場",walk:true,p:"market",hours:"依市場時間",desc:"裝在松木小殼裡的椰子黏糖，名字很好笑，當地特色。",q:"Baguio City Public Market"},
+  {id:"taho",cat:"snack",name:"草莓豆花",en:"Strawberry Taho",dist:"Burnham Park",walk:true,p:"burnham",hours:"白天，路邊推車",desc:"溫豆花加草莓糖漿，天冷時特別好吃。",q:"Burnham Park Baguio"},
+  {id:"wine",cat:"snack",name:"草莓酒、米酒",en:"Strawberry Wine & Tapuy",dist:"市場",walk:true,p:"market",hours:"依市場時間",desc:"當地特產酒，帶回國記得注意行李限制。",q:"Baguio City Public Market"},
+  {id:"longganisa",cat:"snack",name:"碧瑤香腸",en:"Baguio Longganisa",dist:"市場",walk:true,p:"market",hours:"依市場時間",desc:"當地調味的香腸，買真空包裝較好帶。",q:"Baguio City Public Market"},
+
+  // 炸雞小吃
+  {id:"goodtaste",cat:"chicken",name:"Good Taste 炸雞・奶油雞",en:"Good Taste Café & Restaurant",dist:"步行 10 分",walk:true,must:true,p:"goodtaste",hours:"24 小時營業",desc:"Carino Street 上的平價中式餐廳，份量大，等餐時有免費湯。半夜也能吃。",q:"Good Taste Restaurant Carino Street Baguio"},
+  {id:"jollibee",cat:"chicken",name:"Jollibee Chickenjoy",en:"Jollibee",dist:"SM 內",walk:true,must:true,p:"sm",hours:"依商場時間",desc:"菲律賓國民炸雞，脆皮配肉汁和白飯。SM 與 Session Road 一帶都有分店。",q:"Jollibee SM City Baguio"},
+  {id:"kfcsm",cat:"chicken",name:"KFC",en:"KFC",dist:"SM 內",walk:true,p:"sm",hours:"依商場時間",desc:"SM City Baguio 裡也有 KFC，菲律賓版有 gravy 配飯。",q:"KFC SM City Baguio"},
+  {id:"wingzone",cat:"chicken",name:"Wingzone 雞翅",en:"Wingzone",dist:"SM 內",walk:true,must:true,p:"sm",floor:"Sky Terrace Level 3",hours:"依商場時間",desc:"在頂樓空中花園，邊吃雞翅邊看山景。",q:"Wingzone SM City Baguio"},
+  {id:"kfc",cat:"chicken",name:"韓式炸雞",en:"Korean Fried Chicken",dist:"SM 周邊",walk:true,hours:"依店家",desc:"碧瑤有不少韓式炸雞店，Session Road 一帶找得到，品牌以現場為準。",q:"Korean fried chicken near SM City Baguio"},
+  {id:"lomi",cat:"chicken",name:"Tea House 湯麵",en:"Tea House Lomi",dist:"Session Road 一帶",walk:true,hours:"請看 Google",desc:"天冷來一碗濃稠的 lomi 湯麵，很暖胃。",q:"Tea House Restaurant Baguio"},
+  {id:"street",cat:"chicken",name:"夜市路邊小吃",en:"Night Market Street Food",dist:"Harrison Road",walk:true,p:"night",hours:"約 21:00 開始到凌晨",desc:"烤雞腸 isaw、魚丸、烤肉串，邊逛二手衣邊吃。",q:"Baguio Night Market Harrison Road"},
+  {id:"gg",cat:"chicken",name:"G&G 台灣大雞排",en:"G&G Taiwan Famous Fried Chicken",dist:"SM 內",walk:true,p:"sm",floor:"樓層未確認，請看商場看板",hours:MALL,desc:"台灣品牌的大雞排和鹽酥雞，SM 官方商場名錄有列。吃膩菲式炸雞時的家鄉味。",q:"G&G Taiwan Famous Fried Chicken SM City Baguio"},
+  {id:"bonchon",cat:"chicken",name:"Bonchon 韓式炸雞",en:"Bonchon Chicken",dist:"SM 內",walk:true,p:"sm",floor:"主館 2 樓（Unit 204）",rating:2.9,reviews:88,src:"Google",hours:"週日–四 10:00–21:00・週五六 10:00–22:00",desc:"醬油蒜味、辣味兩種刷醬的薄脆炸雞。評論說雞好吃、泡菜涼拌也不錯，但出餐慢、偏貴，分數因此不高。",q:"Bonchon SM City Baguio"},
+  {id:"periperi",cat:"chicken",name:"Peri-Peri 炭烤雞",en:"Peri-Peri Charcoal Chicken",dist:"SM 內",walk:true,p:"sm",floor:"主館 2 樓",hours:"每天 10:00–21:00",desc:"不是油炸，是炭烤雞配一整排自選醬料（非洲辣椒醬）。想吃雞又不想太油可以選這家。",q:"Peri-Peri Charcoal Chicken SM City Baguio"},
+  {id:"manginasal",cat:"chicken",name:"Mang Inasal 烤雞",en:"Mang Inasal",dist:"SM 內",walk:true,p:"sm",floor:"主館 Upper Ground（102 號）",rating:3.4,reviews:818,src:"Google",hours:MALL,desc:"菲律賓連鎖的炭烤雞腿套餐，白飯無限續加，便宜又飽。尖峰時段很擠。",q:"Mang Inasal SM City Baguio"},
+  {id:"buffalos",cat:"chicken",name:"Buffalo's 雞翅",en:"Buffalo's Wings N' Things",dist:"SM 內",walk:true,p:"sm",floor:"樓層未確認，請看商場看板",hours:MALL,desc:"專賣水牛城辣雞翅，口味很多，可以點拼盤和朋友分。",q:"Buffalo's Wings N Things SM City Baguio"},
+  {id:"blakes",cat:"chicken",name:"Blake's 雞翅牛排",en:"Blake's Wings & Steaks",dist:"SM 內",walk:true,p:"sm",floor:"樓層未確認，請看商場看板",hours:MALL,desc:"平價雞翅套餐配飯，一餐約 ₱150–250，學生常去。",q:"Blake's Wings and Steaks SM City Baguio"},
+  {id:"maxs",cat:"chicken",name:"Max's 菲式炸雞",en:"Max's Restaurant",dist:"SM 內",walk:true,p:"sm",floor:"樓層未確認，請看商場看板",hours:MALL,desc:"菲律賓老牌「Sarap to the Bones」炸雞：不裹粉、皮薄脆、肉入味，沾番茄醬和伍斯特醬吃。坐下來吃的家庭餐廳。",q:"Max's Restaurant SM City Baguio"},
+
+  // 咖啡
+  {id:"hill",cat:"cafe",name:"Hill Station",en:"Hill Station · Casa Vallejo",dist:"步行 5 分",walk:true,must:true,p:"hill",hours:"週一–四 7:30–22:00・週五–日 7:00–22:00",ok:true,desc:"在 Upper Session Road 的老建築 Casa Vallejo 裡，離 SM 最近的質感咖啡館，木造空間很有氣氛。SM 裡也有分店 Hill Station Bistro（Sunset Terraces Level 2）。",q:"Hill Station Casa Vallejo Baguio"},
+  {id:"ruins",cat:"cafe",name:"Café by the Ruins",en:"Café by the Ruins",dist:"步行 15 分",walk:true,must:true,p:"ruins",hours:"每日 7:00–21:00",ok:true,desc:"二戰遺跡改建的老牌咖啡館，不接受訂位，早上 7 點去最不用等。",q:"Cafe by the Ruins Shuntug Baguio"},
+  {id:"gulay",cat:"cafe",name:"Oh My Gulay",en:"Oh My Gulay Artist Café",dist:"Session Road",walk:true,p:"gulay",hours:"約 11:00–20:00",desc:"在 La Azotea 大樓頂樓，滿滿藝術裝置的素食咖啡館，很好拍。",q:"Oh My Gulay Baguio"},
+  {id:"batirol",cat:"cafe",name:"Choco-late de Batirol",en:"Choco-late de Batirol",dist:"車程 10 分",walk:false,far:true,hours:"請看 Google",desc:"在 Camp John Hay 松林裡，招牌傳統手打熱可可。",q:"Choco-late de Batirol Camp John Hay"},
+
+  // 服飾品牌
+  {id:"uniqlo",cat:"clothes",name:"UNIQLO",en:"UNIQLO SM City Baguio",dist:"SM 主館",walk:true,must:true,p:"sm",floor:"主館 UGF／GF／FF（跨三層）",hours:"每日 10:00–22:00",ok:true,desc:"碧瑤晚上冷，來不及帶外套可以直接買刷毛或羽絨。",q:"UNIQLO SM City Baguio"},
+  {id:"hm",cat:"clothes",name:"H&M",en:"H&M SM City Baguio",dist:"SM 擴建館",walk:true,must:true,p:"sm",floor:"擴建館 2F（Expansion Wing）",hours:"每日 10:00–21:00",ok:true,desc:"男裝、女裝、童裝、牛仔都有。",q:"H&M SM City Baguio"},
+  {id:"brands",cat:"clothes",name:"SM 其他品牌",en:"Brands at SM City Baguio",dist:"SM 內",walk:true,p:"sm",floor:"樓層請看商場指示牌",hours:"依商場時間",desc:"國際與菲律賓品牌：",buy:["Adidas、Under Armour、Skechers（運動）","Levi's、Vans、Guess、Lacoste","Forever 21","Bench、Penshoppe（菲律賓本土平價品牌）"],q:"SM City Baguio"},
+  {id:"ukaynight",cat:"clothes",name:"夜市二手衣",en:"Harrison Road Ukay-ukay",dist:"步行 10 分",walk:true,must:true,p:"night",hours:"約 21:00 開始到凌晨",desc:"二手外套、帽T、牛仔褲又多又便宜，可以殺價，要有耐心慢慢挖。",q:"Baguio Night Market Harrison Road"},
+  {id:"hilltop",cat:"clothes",name:"Hilltop／Maharlika",en:"Maharlika Livelihood Center",dist:"步行 15 分",walk:true,p:"maharlika",hours:"白天營業",desc:"市場旁，白天就能挖二手衣，也有在地織品、紀念品攤位。",q:"Maharlika Livelihood Center Baguio"},
+  {id:"easter",cat:"clothes",name:"Easter Weaving Room",en:"Easter Weaving Room",dist:"車程 15 分",walk:false,far:true,hours:"請看 Google",desc:"Cordillera 傳統手織布做的包包、圍巾、桌巾，送禮很體面。",q:"Easter Weaving Room Baguio"},
+  {id:"chocnut",cat:"market",name:"Choc Nut",en:"Choc Nut",dist:"SM 超市",walk:true,must:true,p:"sm",floor:"主館 Lower Ground・SM Supermarket",hours:MALL,ok:true,desc:"花生牛奶巧克力小方塊，口感粉粉的、入口即化，菲律賓人的童年零食。單顆包裝、一盒很多顆，最適合分送。",q:"SM Supermarket Baguio"},
+  {id:"dmango",cat:"market",name:"7D 芒果乾",en:"7D Dried Mangoes",dist:"SM 超市",walk:true,must:true,p:"sm",floor:"主館 Lower Ground・SM Supermarket",hours:MALL,ok:true,desc:"宿霧產的芒果乾，菲律賓最有名的伴手禮之一。軟Q、果香重，比一般芒果乾不死甜。",q:"SM Supermarket Baguio"},
+  {id:"boybawang",cat:"market",name:"Boy Bawang 蒜味玉米豆",en:"Boy Bawang Cornick",dist:"SM 超市",walk:true,must:true,p:"sm",floor:"主館 Lower Ground・SM Supermarket",hours:MALL,ok:true,desc:"炸到酥脆的玉米粒，蒜味很重，配啤酒一流。有原味蒜、辣味、Adobo 等口味。",q:"SM Supermarket Baguio"},
+  {id:"pancit",cat:"market",name:"Lucky Me! 乾拌炒麵",en:"Lucky Me! Pancit Canton",dist:"SM 超市",walk:true,must:true,p:"sm",floor:"主館 Lower Ground・SM Supermarket",hours:MALL,ok:true,desc:"菲律賓國民泡麵，乾拌吃。推薦 Chilimansi（辣椒＋菲律賓小金桔）口味，酸辣開胃。",q:"SM Supermarket Baguio"},
+  {id:"piattos",cat:"market",name:"Piattos 洋芋片",en:"Piattos",dist:"SM 超市",walk:true,p:"sm",floor:"主館 Lower Ground・SM Supermarket",hours:MALL,ok:true,desc:"六角形薄脆洋芋片，起司口味最經典，口感比一般洋芋片更薄更脆。",q:"SM Supermarket Baguio"},
+  {id:"chippy",cat:"market",name:"Chippy 玉米片",en:"Chippy",dist:"SM 超市",walk:true,p:"sm",floor:"主館 Lower Ground・SM Supermarket",hours:MALL,ok:true,desc:"烤肉味玉米脆片，鹹甜重口味，菲律賓最常見的零食之一。",q:"SM Supermarket Baguio"},
+  {id:"nova",cat:"market",name:"Nova 多穀物脆片",en:"Nova Multigrain",dist:"SM 超市",walk:true,p:"sm",floor:"主館 Lower Ground・SM Supermarket",hours:MALL,ok:true,desc:"多穀物脆片，鄉村起司 Country Cheddar 口味最受歡迎，口感像比較健康的洋芋片。",q:"SM Supermarket Baguio"},
+  {id:"oishi",cat:"market",name:"Oishi 鮮蝦片",en:"Oishi Prawn Crackers",dist:"SM 超市",walk:true,p:"sm",floor:"主館 Lower Ground・SM Supermarket",hours:MALL,ok:true,desc:"菲律賓本土品牌的鮮蝦片，輕脆不油，有原味和辣味。",q:"SM Supermarket Baguio"},
+  {id:"martys",cat:"market",name:"Marty's 素食豬皮脆片",en:"Marty's Cracklin'",dist:"SM 超市",walk:true,p:"sm",floor:"主館 Lower Ground・SM Supermarket",hours:MALL,ok:true,desc:"做成豬皮口感的素食脆片，醋辣口味（Salt & Vinegar／Spicy Vinegar）最有特色。",q:"SM Supermarket Baguio"},
+  {id:"nagaraya",cat:"market",name:"Nagaraya 蒜味裹粉花生",en:"Nagaraya Cracker Nuts",dist:"SM 超市",walk:true,p:"sm",floor:"主館 Lower Ground・SM Supermarket",hours:MALL,ok:true,desc:"花生外面裹一層脆脆的粉衣，蒜味最經典，一吃就停不下來。",q:"SM Supermarket Baguio"},
+  {id:"skyflakes",cat:"market",name:"SkyFlakes 蘇打餅",en:"SkyFlakes Crackers",dist:"SM 超市",walk:true,p:"sm",floor:"主館 Lower Ground・SM Supermarket",hours:MALL,ok:true,desc:"菲律賓家家戶戶都有的蘇打餅，配咖啡或熱可可，便宜好帶。",q:"SM Supermarket Baguio"},
+  {id:"hansel",cat:"market",name:"Hansel 夾心餅",en:"Hansel Sandwich",dist:"SM 超市",walk:true,p:"sm",floor:"主館 Lower Ground・SM Supermarket",hours:MALL,ok:true,desc:"小包裝的夾心餅乾，摩卡、巧克力口味都有，適合當下午點心。",q:"SM Supermarket Baguio"},
+  {id:"creamo",cat:"market",name:"Cream-O 巧克力夾心餅",en:"Cream-O",dist:"SM 超市",walk:true,p:"sm",floor:"主館 Lower Ground・SM Supermarket",hours:MALL,ok:true,desc:"類似 Oreo 的巧克力夾心餅，價格便宜，奶油層比較厚。",q:"SM Supermarket Baguio"},
+  {id:"flattops",cat:"market",name:"Ricoa Flat Tops 巧克力",en:"Ricoa Flat Tops",dist:"SM 超市",walk:true,p:"sm",floor:"主館 Lower Ground・SM Supermarket",hours:MALL,ok:true,desc:"圓片狀的古早味牛奶巧克力，菲律賓人從小吃到大。",q:"SM Supermarket Baguio"},
+  {id:"polvoron",cat:"market",name:"Polvoron 奶粉酥",en:"Polvoron",dist:"SM 超市",walk:true,p:"sm",floor:"主館 Lower Ground・SM Supermarket",hours:MALL,ok:true,desc:"奶粉、麵粉和奶油壓成的酥餅，入口即化，有原味、Cookies & Cream、紫薯等口味。Goldilocks、Red Ribbon 都有出。",q:"SM Supermarket Baguio"},
+  {id:"bananaketchup",cat:"market",name:"UFC 香蕉番茄醬",en:"UFC Banana Ketchup",dist:"SM 超市",walk:true,p:"sm",floor:"主館 Lower Ground・SM Supermarket",hours:MALL,ok:true,desc:"用香蕉做的甜番茄醬，菲律賓人配炸雞、煎蛋都用它。液體要放託運行李。",q:"SM Supermarket Baguio"},
+  {id:"coco",cat:"drink",name:"CoCo 都可",en:"CoCo Fresh Tea & Juice",dist:"SM 商場內",walk:true,p:"sm",floor:"Sunset Terraces Level 2",hours:"每日 10:00–21:00",ok:true,desc:"台灣品牌，珍珠奶茶、百香雙響炮、鮮芋奶茶都跟台灣一樣。外送平台上評論數是 SM 裡最多的手搖飲之一。",q:"CoCo Fresh Tea & Juice SM City Baguio"},
+  {id:"gongcha",cat:"drink",name:"貢茶",en:"Gong cha",dist:"SM 商場內",walk:true,p:"sm",floor:"樓層未確認",hours:MALL,desc:"台灣起家的品牌，招牌是奶蓋茶，可以調甜度冰塊。",q:"Gong cha SM City Baguio"},
+  {id:"chatime",cat:"drink",name:"日出茶太",en:"Chatime",dist:"SM 商場內",walk:true,p:"sm",floor:"樓層未確認",hours:MALL,desc:"台灣品牌，珍珠奶茶、仙草凍奶茶，選擇多。",q:"Chatime SM City Baguio"},
+  {id:"tigersugar",cat:"drink",name:"老虎堂",en:"Tiger Sugar",dist:"SM 商場內",walk:true,p:"sm",floor:"樓層未確認",hours:MALL,desc:"台灣品牌，黑糖珍珠鮮奶，杯壁虎紋是招牌。",q:"Tiger Sugar SM City Baguio"},
+  {id:"yifang",cat:"drink",name:"一芳水果茶",en:"Yi Fang Taiwan Fruit Tea",dist:"約 500 公尺",walk:true,p:"yifang",rating:4.0,reviews:185,src:"Google",hours:"請看 Google",desc:"台灣品牌，招牌水果茶有真的水果丁。兩層樓座位、有 Wi-Fi 和插座，逛 Session Road 累了可以坐。地址 32 Assumption Rd。",q:"Yi Fang Taiwan Fruit Tea Session Road Baguio"},
+  {id:"dq",cat:"ice",name:"Dairy Queen",en:"Dairy Queen",dist:"SM 商場內",walk:true,p:"sm",floor:"Lower Ground",hours:"每日 10:00–21:00",desc:"倒過來不會掉的 Blizzard 暴風雪，菲律賓限定口味值得試。",q:"Dairy Queen SM City Baguio"},
+  {id:"yogorino",cat:"ice",name:"Yogorino",en:"Yogorino",dist:"SM 商場內",walk:true,p:"sm",floor:"Sky Terrace Level 3",hours:MALL,ok:true,desc:"義大利品牌優格冰淇淋，口味有 20 多種，還有義式冰淇淋和日式可麗餅。在頂樓花園吃，風景好。",q:"Yogorino SM City Baguio"},
+  {id:"hoy",cat:"ice",name:"H.O.Y. 優格屋",en:"House of Yogurt Lover",dist:"SM 商場內",walk:true,p:"sm",floor:"North Terrace Lower Ground",hours:MALL,rating:4.5,reviews:657,src:"Google",desc:"碧瑤在地品牌，自製優格加高山水果、燕麥自己配。星等是 Marcos Highway 本店的 Google 評分。",q:"House of Yogurt Lover SM City Baguio"},
+  {id:"lostbread",cat:"ice",name:"The Lost Bread",en:"The Lost Bread",dist:"SM 商場內",walk:true,p:"sm",floor:"Sunset Terraces Level 2",hours:MALL,ok:true,desc:"馬尼拉來的甜點連鎖，以法式吐司配冰淇淋出名，適合兩人分食。",q:"The Lost Bread SM City Baguio"},
+  {id:"avocadoria",cat:"ice",name:"Avocadoria",en:"Avocadoria",dist:"SM 商場內",walk:true,p:"sm",floor:"樓層未確認",rating:3.3,reviews:10,src:"Google",hours:"每日 10:00–21:00",desc:"酪梨冰淇淋和酪梨奶昔，台灣少見。Google 評論不多、評價普通，有評論說偶爾沒開或缺貨，當作嚐鮮就好。",q:"Avocadoria SM City Baguio"},
+  {id:"mixue",cat:"ice",name:"蜜雪冰城",en:"Mixue Ice Cream & Tea",dist:"約 700 公尺",walk:true,p:"abanao",hours:"請看 Google",desc:"中國平價連鎖，霜淇淋很便宜。在 Abanao Street，往市場的路上順路。",q:"Mixue Abanao Street Baguio"},
+  {id:"poshsm",cat:"nail",name:"Posh Nails（SM 店）",en:"Posh Nails Hand & Foot Spa",dist:"SM 商場內",walk:true,p:"sm",floor:"樓層未確認",hours:MALL,desc:"菲律賓連鎖美甲與手足 Spa，做一般凝膠、手足保養。逛街時順便最方便。",q:"Posh Nails SM City Baguio"},
+  {id:"poshpv",cat:"nail",name:"Posh Nails（Porta Vaga 店）",en:"Posh Nails Porta Vaga",dist:"約 400 公尺",walk:true,p:"portavaga",hours:"請看 Google",desc:"同一品牌在 Session Road 上 Porta Vaga Mall 的分店，SM 店客滿可以來這裡。",q:"Posh Nails Porta Vaga Mall Baguio"},
+  {id:"nailhouse",cat:"nail",name:"Nail House",en:"Nail House",dist:"SM 商場內",walk:true,p:"sm",floor:"主館 Upper Ground",hours:MALL,desc:"碧瑤在地美甲店，使用 OPI、Orly、Zoya 等品牌甲油，有凝膠、彩繪、延甲。",q:"Nail House SM City Baguio"},
+  {id:"agara",cat:"rated",name:"Agara Ramen",en:"日式拉麵",dist:"約 1.3 公里，建議搭車",walk:false,rating:4.9,reviews:1736,hours:"請看 Google",desc:"超過步行 10 分鐘，但碧瑤評論數最多的高分餐廳之一。擔擔麵、天婦羅、和牛都受推薦，熱門時段要排隊。",q:"Agara Ramen Baguio"},
+  {id:"bistrolokal",cat:"rated",name:"Bistro Lokal",en:"菲律賓菜",dist:"約 1.3 公里，建議搭車",walk:false,rating:4.8,reviews:177,hours:"請看 Google",desc:"超過步行 10 分鐘。想吃道地菲律賓菜來這裡，必點 dinuguan 豬血燉肉、kare-kare 花生燉牛尾。",q:"Bistro Lokal Baguio"},
+  {id:"omu",cat:"rated",name:"Omu Philippines",en:"日式蛋包飯",dist:"約 150 公尺",walk:true,rating:4.9,reviews:169,hours:"請看 Google",desc:"招牌蛋包飯和咖哩豬排，評論常說是碧瑤必吃蛋包飯。",q:"Omu Philippines Baguio"},
+  {id:"tongyang",cat:"rated",name:"Tong Yang",en:"火鍋燒烤吃到飽",dist:"SM 商場內",walk:true,rating:4.7,reviews:235,p:"sm",hours:"依商場時間",desc:"火鍋加燒烤的吃到飽，評論大推涮涮鍋，天冷最適合。",q:"Tong Yang Baguio"},
+  {id:"valencia",cat:"rated",name:"Valencia's Restaurant",en:"西班牙海鮮飯・義式",dist:"約 800 公尺",walk:true,rating:4.9,reviews:246,hours:"請看 Google",desc:"評論公認碧瑤最好吃的西班牙海鮮飯 Paella Valenciana。",q:"Valencia's Restaurant Baguio"},
+  {id:"piapi",cat:"rated",name:"Piapi Deli",en:"美式・菲式家常",dist:"約 800 公尺",walk:true,rating:4.9,reviews:89,hours:"請看 Google",desc:"飯類套餐受好評，香蕉奶昔很多人推。",q:"Piapi Deli Baguio"},
+  {id:"tajimaya",cat:"rated",name:"Tajimaya Charcoal Grill",en:"日式炭火燒肉",dist:"約 800 公尺",walk:true,rating:4.7,reviews:485,hours:"請看 Google",desc:"自己烤的炭火燒肉，肉的醃料調味很受好評。",q:"Tajimaya Charcoal Grill Baguio"},
+  {id:"witchcraft",cat:"rated",name:"The Gallery by Witchcraft",en:"酒吧・地中海料理",dist:"約 800 公尺",walk:true,rating:4.7,reviews:237,hours:"請看 Google",desc:"酒吧兼餐廳，氣氛好，評論說物有所值。",q:"The Gallery by Witchcraft Baguio"},
+  {id:"redrustikz",cat:"rated",name:"Red Rustikz",en:"義式・美式",dist:"約 500 公尺",walk:true,rating:4.5,reviews:159,hours:"請看 Google",desc:"義大利麵、披薩、排餐類，評價穩定。",q:"Red Rustikz Baguio"},
+  {id:"rhill",cat:"rated",name:"Hill Station",en:"菲式・國際料理",dist:"約 150 公尺",walk:true,rating:4.2,reviews:613,p:"hill",hours:"週一–四 7:30–22:00・週五–日 7:00–22:00",ok:true,desc:"評論數最多的老字號之一，燉羊肉、菲力牛排受推薦。",q:"Hill Station Baguio"},
+  {id:"marios",cat:"rated",name:"Mario's Restaurant",en:"西班牙菜",dist:"約 800 公尺",walk:true,rating:4.2,reviews:142,hours:"請看 Google",desc:"碧瑤的西班牙菜老餐廳。",q:"Mario's Restaurant Baguio"},
+  {id:"fortune",cat:"rated",name:"Fortune Hong Kong Seafood",en:"港式海鮮",dist:"約 800 公尺",walk:true,rating:4.2,reviews:74,hours:"請看 Google",desc:"港式海鮮與點心，適合多人合菜。",q:"Fortune Hong Kong Seafood Baguio"},
+  {id:"tsokolateria",cat:"rated",name:"Tsokolateria",en:"熱可可・菲式",dist:"約 150 公尺",walk:true,rating:4.1,reviews:80,hours:"請看 Google",desc:"傳統菲律賓熱可可 tsokolate，配 suman 糯米糕。",q:"Tsokolateria Baguio"},
+  {id:"chaya",cat:"rated",name:"Chaya",en:"日式・壽司",dist:"約 800 公尺",walk:true,rating:4.1,reviews:213,hours:"請看 Google",desc:"老牌日式餐廳，壽司與定食。",q:"Chaya Baguio"},
+  {id:"rgulay",cat:"rated",name:"Oh My Gulay",en:"素食・藝術咖啡館",dist:"約 300 公尺",walk:true,rating:4.0,reviews:253,p:"gulay",hours:"約 11:00–20:00",desc:"藝術裝置環繞的素食餐廳，菜色選擇多。",q:"Oh My Gulay Baguio"},
+  {id:"rgoodtaste",cat:"rated",name:"Goodtaste Restaurant",en:"中式・菲式",dist:"約 800 公尺",walk:true,rating:4.0,reviews:1026,p:"goodtaste",hours:"24 小時營業",desc:"評論數破千的平價名店，份量大。",q:"Goodtaste Restaurant Baguio"},
+  {id:"canto",cat:"rated",name:"Canto Bogchi Joint",en:"燒烤・牛排",dist:"約 500 公尺",walk:true,rating:4.0,reviews:93,hours:"請看 Google",desc:"燒烤和牛排，價格親民。",q:"Canto Bogchi Joint Baguio"},
+  {id:"sage",cat:"rated",name:"Sage",en:"菲式・國際料理",dist:"約 800 公尺",walk:true,rating:4.0,reviews:81,hours:"請看 Google",desc:"菲式與國際料理都有，評價穩定。",q:"Sage Baguio"}
+];
+const ARTOF={gg:"chicken",bonchon:"chicken",periperi:"skewer",manginasal:"skewer",buffalos:"chicken",blakes:"chicken",maxs:"chicken",cjh:"park",botanical:"leaf",wright:"park",bencab:"weave",ililikha:"weave",mirador:"church",tamawan:"leaf",stonekingdom:"park",chocnut:"choco",dmango:"mango",boybawang:"chips",pancit:"noodle",piattos:"chips",chippy:"chips",nova:"chips",oishi:"chips",martys:"chips",nagaraya:"brittle",skyflakes:"cracker",hansel:"cracker",creamo:"cracker",flattops:"choco",polvoron:"cracker",bananaketchup:"bottle",coco:"boba",gongcha:"boba",chatime:"boba",tigersugar:"boba",yifang:"boba",dq:"cone",yogorino:"cone",hoy:"cone",lostbread:"cake",avocadoria:"cone",mixue:"cone",poshsm:"nail",poshpv:"nail",nailhouse:"nail",agara:"noodle",bistrolokal:"butter",omu:"butter",tongyang:"noodle",valencia:"butter",piapi:"cup",tajimaya:"skewer",witchcraft:"bottle",redrustikz:"butter",rhill:"cup",marios:"butter",fortune:"noodle",tsokolateria:"cocoa",chaya:"noodle",rgulay:"leaf",rgoodtaste:"chicken",canto:"skewer",sage:"leaf",sm:"mall",skyranch:"wheel",session:"street",burnham:"park",cathedral:"church",market:"market",night:"night",
+  ube:"jar",shortcake:"cake",strawberry:"berry",brittle:"brittle",coffee:"beans",sundot:"shell",taho:"taho",wine:"bottle",longganisa:"sausage",
+  goodtaste:"butter",jollibee:"chicken",kfcsm:"chicken",wingzone:"chicken",kfc:"chicken",lomi:"noodle",street:"skewer",
+  hill:"cup",ruins:"cup",gulay:"leaf",batirol:"cocoa",
+  uniqlo:"jacket",hm:"bag",brands:"bag",ukaynight:"jacket",hilltop:"rack",easter:"weave"};
+const MENU={
+  goodtaste:["整隻炸雞 Fried Chicken","奶油雞 Buttered Chicken","炒雜菜 Chop Suey","上海春捲 Lumpia","炒飯（一盤可分 4–6 人）"],
+  jollibee:["Chickenjoy 脆皮炸雞配白飯和肉汁","Jolly Spaghetti 甜味義大利麵","Peach Mango Pie 桃子芒果派"],
+  kfcsm:["炸雞配飯和 gravy"],
+  wingzone:["鹹蛋 Salted Egg 雞翅","泰式甜辣 Thai Chili","蒜味起司 Garlic Parm"],
+  kfc:["原味、甜辣、醬油蒜味是常見口味"],
+  lomi:["Lomi 濃稠湯麵"],
+  street:["Isaw 烤雞腸","魚丸 fishball","烤肉串 BBQ"],
+  shortcake:["Strawberry Shortcake 草莓奶油蛋糕"],
+  hill:["咖啡與甜點","摩洛哥風味料理"],
+  ruins:["Benguet 咖啡","地瓜麵包 kamote bread","Bagnet 炸豬五花","Pinikpikan 山地雞湯"],
+  gulay:["素食義大利麵"],
+  batirol:["傳統手打熱可可 tsokolate"]
+};
+
+// SM City Baguio 樓層導覽。ok:false 代表樓層未經官方確認
+const FLOORS=[
+  {zone:"主館 Main Building",note:"商場主體，共六層，中間是半開放式中庭",floors:[
+    {lv:"Level 3",feat:"電影院與 3C",groups:[
+      {k:"娛樂",items:[["SM Cinema","4 個影廳"]]},
+      {k:"3C 電子",items:[["Cyberzone","手機、電腦、遊戲周邊集中區"]]}
+    ]},
+    {lv:"UGF／GF／FF",feat:"UNIQLO 跨三層",groups:[
+      {k:"服飾",items:[["UNIQLO","每日 10:00–22:00，刷毛、羽絨禦寒最方便"]]}
+    ]},
+    {lv:"Lower Ground",feat:"超市與政府服務",groups:[
+      {k:"超市",items:[["SM Supermarket","大型超市，零食、咖啡、在地伴手禮可以一次買齊"]]},
+      {k:"服務",items:[["DFA 外交部領事辦公室","辦護照的地方，觀光客用不到"]]}
+    ]}
+  ]},
+  {zone:"擴建館 Expansion Wing",note:"",floors:[
+    {lv:"Level 2",feat:"國際快時尚",groups:[
+      {k:"服飾",items:[["H&M","每日 10:00–21:00，男裝、女裝、童裝"]]}
+    ]}
+  ]},
+  {zone:"Sky Terrace 空中花園",note:"頂樓景觀花園，種滿樹木，可以看山景，拍照首選",floors:[
+    {lv:"Level 3",feat:"頂樓花園＋輕食",groups:[
+      {k:"咖啡茶飲",items:[["Highland Brew","咖啡和茶，招牌 Mt. Ulap 提拉米蘇、薰衣草與洛神花飲品"]]},
+      {k:"炸雞小吃",items:[["Wingzone","雞翅專賣：鹹蛋、泰式甜辣、蒜味起司"]]},
+      {k:"甜點",items:[["Yogorino","義式優格冰淇淋、日式可麗餅"]]}
+    ]}
+  ]},
+  {zone:"Sunset Terraces 夕陽露台",note:"傍晚可以邊看夕陽邊吃飯，餐廳最集中的區域",floors:[
+    {lv:"Level 2",feat:"聚餐餐廳",groups:[
+      {k:"日式",items:[["Nabe Japanese Izakaya & Hotpot","火鍋吃到飽，16 種湯底"]]},
+      {k:"美式",items:[["Chili's","美式餐廳，墨西哥捲餅、沙拉"]]},
+      {k:"菲律賓菜",items:[["Hill Station Bistro","碧瑤名店分店，茄子蛋餅、烤五花"]]}
+    ]},
+    {lv:"Upper Ground",feat:"泰式與日式",groups:[
+      {k:"泰式",items:[["Greyhound Café","泰式料理，鳳梨炒飯，有隱藏菜單"],["Mango Tree Cafe","道地泰式咖哩、沙拉"]]},
+      {k:"日式",items:[["Botejyu","大阪煎餃、加州捲、便當"],["Genki Sushi","壽司、生魚片"]]}
+    ]}
+  ]},
+  {zone:"North Terrace 北露台",note:"超市入口前，咖啡甜點集中",floors:[
+    {lv:"Lower Ground",feat:"咖啡與甜點",groups:[
+      {k:"甜點",items:[["Vizco's","草莓奶油蛋糕、Tres Leches 牛奶蛋糕"],["H.O.Y. House of Yogurt","手工優格、hopia 綠豆餅、起司派"]]},
+      {k:"咖啡",items:[["Coffee & Pine","在地咖啡館，招牌 Atok Haze 拿鐵"],["James Wright Café","希臘冰咖啡、乳酪蛋糕拿鐵"]]}
+    ]}
+  ]},
+  {zone:"樓層未確認",note:"這些店確定在 SM City Baguio，但查不到樓層，請看商場指示牌",unknown:true,floors:[
+    {lv:"",feat:"",groups:[
+      {k:"百貨",items:[["The SM Store","百貨公司，跨多層，服飾、美妝、家居、玩具都有"]]},
+      {k:"服飾運動",items:[["Adidas、Under Armour、Skechers","運動品牌"],["Levi's、Vans、Guess、Lacoste","美式休閒"],["Forever 21","平價快時尚"],["Bench、Penshoppe","菲律賓本土平價品牌"]]},
+      {k:"速食",items:[["Jollibee","Chickenjoy 炸雞"],["KFC","炸雞"],["Mang Inasal","炭烤雞肉飯"],["Max's Restaurant","菲式炸雞老店"]]},
+      {k:"生活",items:[["Watsons","藥妝"],["National Book Store、Booksale","書店，Booksale 是二手書"],["Toy Kingdom","玩具"],["Ace Hardware","五金家居"],["Abenson","家電"],["Pandora","飾品"]]}
+    ]}
+  ]},
+  {zone:"周邊建物",note:"",floors:[
+    {lv:"",feat:"",groups:[
+      {k:"娛樂",items:[["Sky Ranch","商場旁遊樂園，Baguio Eye 摩天輪直徑 45 公尺，24 個冷氣車廂"]]},
+      {k:"停車",items:[["Carpark Annex","5 層停車場，600 多個車位，入口在 Governor Pack Road"]]},
+      {k:"其他",items:[["SM Cyber Baguio","辦公大樓，一樓有 Krispy Kreme 甜甜圈"]]}
+    ]}
+  ]}
+];
+const S=(b)=>`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">${b}</svg>`;
+const ART={
+  mall:S(`<rect x="0" y="62" width="100" height="38" fill="#7aa58c"/><path d="M0 62 L22 40 L40 58 L62 34 L100 62Z" fill="#3f7a5c"/><rect x="18" y="48" width="64" height="30" rx="3" fill="#f2f2ee"/><rect x="18" y="44" width="64" height="7" fill="#2f5aa8"/><g fill="#9cc3e6"><rect x="24" y="56" width="10" height="8"/><rect x="38" y="56" width="10" height="8"/><rect x="52" y="56" width="10" height="8"/><rect x="66" y="56" width="10" height="8"/></g><rect x="44" y="68" width="12" height="10" fill="#5a6b62"/><circle cx="80" cy="20" r="8" fill="#f2c14e"/>`),
+  wheel:S(`<rect y="78" width="100" height="22" fill="#3f7a5c"/><circle cx="50" cy="42" r="30" fill="none" stroke="#c8324a" stroke-width="3"/><g stroke="#c8324a" stroke-width="1.5"><line x1="50" y1="12" x2="50" y2="72"/><line x1="20" y1="42" x2="80" y2="42"/><line x1="29" y1="21" x2="71" y2="63"/><line x1="71" y1="21" x2="29" y2="63"/></g><g fill="#f2c14e"><circle cx="50" cy="12" r="5"/><circle cx="80" cy="42" r="5"/><circle cx="20" cy="42" r="5"/><circle cx="71" cy="21" r="5"/><circle cx="29" cy="21" r="5"/><circle cx="71" cy="63" r="5"/><circle cx="29" cy="63" r="5"/></g><path d="M50 42 L36 80 M50 42 L64 80" stroke="#5a6b62" stroke-width="3"/>`),
+  street:S(`<rect width="100" height="100" fill="#cfe0ea"/><path d="M40 100 L48 30 L52 30 L60 100Z" fill="#6b6f72"/><path d="M50 40v6M50 56v8M50 74v10" stroke="#f2f2ee" stroke-width="1.5"/><rect x="4" y="28" width="30" height="72" fill="#e9b872"/><rect x="66" y="22" width="30" height="78" fill="#d47a5f"/><g fill="#fff8e6"><rect x="9" y="36" width="8" height="8"/><rect x="21" y="36" width="8" height="8"/><rect x="9" y="52" width="8" height="8"/><rect x="21" y="52" width="8" height="8"/><rect x="71" y="30" width="8" height="8"/><rect x="83" y="30" width="8" height="8"/><rect x="71" y="46" width="8" height="8"/><rect x="83" y="46" width="8" height="8"/></g>`),
+  park:S(`<rect width="100" height="100" fill="#d7ebe0"/><ellipse cx="50" cy="66" rx="40" ry="16" fill="#6fb2cf"/><path d="M38 64 q6 -6 12 0 z" fill="#f2c14e"/><path d="M58 70 q6 -6 12 0 z" fill="#c8324a"/><g fill="#2f6a4b"><path d="M14 52 L22 20 L30 52Z"/><path d="M76 50 L84 16 L92 50Z"/><path d="M62 40 L68 18 L74 40Z"/></g><g fill="#6b4a2b"><rect x="21" y="52" width="2" height="6"/><rect x="83" y="50" width="2" height="6"/></g>`),
+  church:S(`<rect width="100" height="100" fill="#dfe8f2"/><rect x="0" y="84" width="100" height="16" fill="#a7a9ac"/><g fill="#e7a1ae"><rect x="22" y="40" width="56" height="44"/><rect x="22" y="22" width="14" height="22"/><rect x="64" y="22" width="14" height="22"/></g><g fill="#c8324a"><path d="M20 24 L29 10 L38 24Z"/><path d="M62 24 L71 10 L80 24Z"/></g><path d="M42 84 v-16 a8 8 0 0 1 16 0 v16z" fill="#7a3b46"/><circle cx="50" cy="52" r="6" fill="#fff6f0"/>`),
+  market:S(`<rect width="100" height="100" fill="#f5ead8"/><path d="M8 34 h84 l-6 10 h-72z" fill="#c8324a"/><g fill="#f7f1e8"><path d="M18 34 h10 l-1 10 h-10z"/><path d="M44 34 h12 l0 10 h-12z"/><path d="M72 34 h10 l1 10 h-10z"/></g><rect x="14" y="44" width="72" height="40" fill="#e3c79a"/><g><circle cx="28" cy="62" r="7" fill="#c8324a"/><circle cx="44" cy="60" r="7" fill="#7aa548"/><circle cx="58" cy="62" r="7" fill="#8a5aa8"/><circle cx="72" cy="60" r="7" fill="#f2a33a"/></g><rect x="14" y="70" width="72" height="4" fill="#b08a55"/>`),
+  night:S(`<rect width="100" height="100" fill="#1f2340"/><circle cx="82" cy="16" r="7" fill="#f4e7b0"/><path d="M0 26 Q25 34 50 26 T100 26" fill="none" stroke="#f2c14e" stroke-width="1"/><g fill="#f2c14e"><circle cx="12" cy="29" r="2"/><circle cx="30" cy="31" r="2"/><circle cx="50" cy="26" r="2"/><circle cx="70" cy="22" r="2"/><circle cx="88" cy="26" r="2"/></g><g><path d="M6 52 l14 -10 l14 10z" fill="#c8324a"/><rect x="8" y="52" width="24" height="30" fill="#e8dcc4"/><path d="M38 52 l14 -10 l14 10z" fill="#3f7a5c"/><rect x="40" y="52" width="24" height="30" fill="#e8dcc4"/><path d="M70 52 l14 -10 l14 10z" fill="#2f5aa8"/><rect x="72" y="52" width="24" height="30" fill="#e8dcc4"/></g><g fill="#6b7fb0"><rect x="12" y="58" width="6" height="12"/><rect x="21" y="58" width="6" height="12" fill="#c8324a"/><rect x="45" y="58" width="6" height="12" fill="#7aa548"/><rect x="76" y="58" width="6" height="12" fill="#f2a33a"/></g>`),
+  jar:S(`<rect x="34" y="18" width="32" height="10" rx="2" fill="#d9b25a"/><rect x="28" y="28" width="44" height="58" rx="8" fill="#6f3d8f"/><rect x="34" y="46" width="32" height="22" rx="3" fill="#f7f1e8"/><rect x="38" y="52" width="24" height="3" fill="#6f3d8f"/><rect x="38" y="59" width="16" height="3" fill="#b38bc9"/><path d="M33 34 v40" stroke="#9a6bb8" stroke-width="3" stroke-linecap="round"/>`),
+  cake:S(`<path d="M18 74 L82 74 L82 56 L18 44 Z" fill="#f6e3c3"/><path d="M18 44 L82 56 L82 50 L18 38Z" fill="#fff8f0"/><path d="M18 58 L82 66 L82 62 L18 54Z" fill="#f4b6c2"/><path d="M18 74 L82 74 L82 80 L18 80Z" fill="#e8c99a"/><g><path d="M44 32 q6 -8 12 0 q2 10 -6 14 q-8 -4 -6 -14z" fill="#d6283f"/><path d="M47 30 l3 -5 l3 5z" fill="#3f8a4a"/></g><g fill="#fff3b0"><circle cx="48" cy="38" r=".8"/><circle cx="52" cy="36" r=".8"/></g>`),
+  berry:S(`<g><path d="M30 40 q12 -14 24 0 q4 22 -12 34 q-16 -12 -12 -34z" fill="#d6283f"/><path d="M34 36 l8 -8 l8 8 l-8 2z" fill="#3f8a4a"/><path d="M54 50 q12 -14 24 0 q4 22 -12 34 q-16 -12 -12 -34z" fill="#e23b52"/><path d="M58 46 l8 -8 l8 8 l-8 2z" fill="#3f8a4a"/></g><g fill="#ffe08a"><circle cx="38" cy="48" r="1"/><circle cx="46" cy="50" r="1"/><circle cx="42" cy="58" r="1"/><circle cx="62" cy="60" r="1"/><circle cx="70" cy="62" r="1"/><circle cx="66" cy="70" r="1"/></g>`),
+  brittle:S(`<path d="M14 40 L60 30 L86 46 L80 70 L30 76 L16 62Z" fill="#d79a3d"/><path d="M14 40 L60 30 L86 46 L60 50Z" fill="#e8b45e" opacity=".7"/><g fill="#a9662a"><ellipse cx="30" cy="50" rx="4" ry="3"/><ellipse cx="44" cy="58" rx="4" ry="3"/><ellipse cx="58" cy="44" rx="4" ry="3"/><ellipse cx="66" cy="60" rx="4" ry="3"/><ellipse cx="36" cy="66" rx="4" ry="3"/><ellipse cx="74" cy="50" rx="4" ry="3"/></g>`),
+  beans:S(`<path d="M26 34 h48 l-4 52 h-40z" fill="#c8a777"/><path d="M26 34 h48 v8 h-48z" fill="#a8875a"/><g fill="#5a3420"><ellipse cx="38" cy="28" rx="6" ry="4"/><ellipse cx="50" cy="24" rx="6" ry="4"/><ellipse cx="62" cy="28" rx="6" ry="4"/><ellipse cx="44" cy="30" rx="6" ry="4"/><ellipse cx="56" cy="30" rx="6" ry="4"/></g><rect x="36" y="54" width="28" height="16" rx="2" fill="#f7f1e8"/><path d="M42 62 h16" stroke="#3f7a5c" stroke-width="2"/>`),
+  shell:S(`<g><ellipse cx="34" cy="56" rx="20" ry="14" fill="#a8774b"/><ellipse cx="34" cy="54" rx="15" ry="9" fill="#e9d2a6"/><ellipse cx="34" cy="54" rx="9" ry="5" fill="#7a4a24"/><ellipse cx="68" cy="50" rx="20" ry="14" fill="#a8774b"/><ellipse cx="68" cy="48" rx="15" ry="9" fill="#e9d2a6"/><ellipse cx="68" cy="48" rx="9" ry="5" fill="#7a4a24"/></g><path d="M74 40 l10 -20" stroke="#b9a07a" stroke-width="3" stroke-linecap="round"/>`),
+  taho:S(`<path d="M28 36 h44 l-6 48 h-32z" fill="#f2f2ee" stroke="#cfd5d1" stroke-width="1.5"/><path d="M30 44 h40 l-1 10 h-38z" fill="#f4f0e2"/><path d="M31 44 q19 10 38 0 l-1 8 q-18 8 -36 0z" fill="#e23b52"/><g fill="#d6283f"><circle cx="40" cy="40" r="4"/><circle cx="56" cy="38" r="4"/></g><path d="M62 32 l10 -18" stroke="#3f7a5c" stroke-width="3" stroke-linecap="round"/>`),
+  bottle:S(`<rect x="30" y="14" width="10" height="16" fill="#3f7a5c"/><path d="M28 30 h14 v6 q8 6 8 16 v34 h-30 v-34 q0 -10 8 -16z" fill="#b8243c"/><rect x="24" y="56" width="22" height="16" fill="#f7f1e8"/><rect x="62" y="22" width="8" height="12" fill="#a8774b"/><path d="M58 34 h16 v4 q6 4 6 12 v36 h-28 v-36 q0 -8 6 -12z" fill="#efe6cf"/><rect x="56" y="58" width="20" height="14" fill="#c8a777"/>`),
+  sausage:S(`<g fill="#b4432c"><rect x="12" y="40" width="26" height="20" rx="10"/><rect x="38" y="40" width="26" height="20" rx="10"/><rect x="64" y="40" width="26" height="20" rx="10"/></g><g stroke="#7a2a1a" stroke-width="2"><path d="M37 44v12M63 44v12"/></g><g fill="#e07a5c" opacity=".6"><rect x="16" y="44" width="10" height="4" rx="2"/><rect x="42" y="44" width="10" height="4" rx="2"/><rect x="68" y="44" width="10" height="4" rx="2"/></g>`),
+  chicken:S(`<ellipse cx="50" cy="78" rx="38" ry="8" fill="#e9e3d6"/><path d="M26 58 q-6 -26 20 -32 q26 -4 30 18 q2 16 -16 22 q-18 6 -34 -8z" fill="#c9852c"/><path d="M34 46 q6 -10 18 -10" stroke="#e8b45e" stroke-width="4" stroke-linecap="round" fill="none"/><g fill="#a35f1a"><circle cx="44" cy="50" r="2"/><circle cx="56" cy="44" r="2"/><circle cx="60" cy="56" r="2"/><circle cx="38" cy="58" r="2"/></g><path d="M62 62 l14 10" stroke="#f2ede2" stroke-width="7" stroke-linecap="round"/><circle cx="79" cy="74" r="5" fill="#f2ede2"/>`),
+  butter:S(`<ellipse cx="50" cy="66" rx="40" ry="18" fill="#f2f2ee" stroke="#d5d2c8"/><ellipse cx="50" cy="64" rx="30" ry="12" fill="#f4d36b" opacity=".7"/><path d="M30 60 q-2 -16 14 -18 q16 -2 18 10 q2 10 -10 13 q-12 4 -22 -5z" fill="#d7942f"/><path d="M50 58 q2 -14 16 -14 q14 2 12 12 q-2 10 -14 10 q-10 0 -14 -8z" fill="#c9852c"/><rect x="58" y="40" width="12" height="9" rx="2" fill="#fff1a8"/>`),
+  noodle:S(`<path d="M14 50 h72 q-4 30 -36 30 q-32 0 -36 -30z" fill="#e6e0d2"/><ellipse cx="50" cy="50" rx="36" ry="8" fill="#c99a4a"/><g stroke="#f2d78a" stroke-width="2" fill="none"><path d="M26 50 q6 -4 12 0 t12 0 t12 0 t12 0"/><path d="M30 46 q6 -3 12 0 t12 0 t12 0"/></g><circle cx="58" cy="48" r="4" fill="#f7f1e8"/><circle cx="58" cy="48" r="2" fill="#f2c14e"/><path d="M68 20 l-10 30 M76 22 l-12 28" stroke="#8a5a2b" stroke-width="2.5" stroke-linecap="round"/>`),
+  skewer:S(`<g stroke="#b9a07a" stroke-width="2.5" stroke-linecap="round"><path d="M20 86 L60 18"/><path d="M40 88 L80 20"/></g><g fill="#7a3b1e"><circle cx="30" cy="68" r="7"/><circle cx="38" cy="54" r="7"/><circle cx="46" cy="40" r="7"/></g><g fill="#e8a23a"><circle cx="52" cy="68" r="7"/><circle cx="60" cy="54" r="7"/><circle cx="68" cy="40" r="7"/></g>`),
+  cup:S(`<path d="M24 40 h46 v26 q0 16 -23 16 q-23 0 -23 -16z" fill="#f2ede2" stroke="#cfc6b4"/><path d="M70 46 q14 0 12 12 q-2 8 -12 8" fill="none" stroke="#cfc6b4" stroke-width="4"/><ellipse cx="47" cy="40" rx="23" ry="5" fill="#7a4a24"/><path d="M47 39 q-6 -3 0 -5 q6 2 0 5" fill="#e9d2a6"/><g stroke="#a0a8a2" stroke-width="2" fill="none" stroke-linecap="round"><path d="M38 28 q-4 -6 0 -12"/><path d="M50 26 q-4 -6 0 -12"/></g><ellipse cx="47" cy="84" rx="30" ry="4" fill="#d5cdbb"/>`),
+  cocoa:S(`<path d="M24 40 h46 v26 q0 16 -23 16 q-23 0 -23 -16z" fill="#7a4a24"/><path d="M70 46 q14 0 12 12 q-2 8 -12 8" fill="none" stroke="#7a4a24" stroke-width="4"/><ellipse cx="47" cy="40" rx="23" ry="5" fill="#4a2a14"/><g fill="#c9a07a"><circle cx="40" cy="40" r="1.5"/><circle cx="50" cy="39" r="1.5"/><circle cx="56" cy="41" r="1.5"/></g><path d="M72 30 l12 -16" stroke="#a8774b" stroke-width="4" stroke-linecap="round"/><circle cx="72" cy="31" r="5" fill="#a8774b"/>`),
+  leaf:S(`<path d="M24 40 h46 v26 q0 16 -23 16 q-23 0 -23 -16z" fill="#f2ede2" stroke="#cfc6b4"/><ellipse cx="47" cy="40" rx="23" ry="5" fill="#9b6a3a"/><g fill="#5aa86a"><path d="M70 30 q14 -18 22 -10 q-8 14 -22 10z"/><path d="M14 34 q-4 -20 8 -22 q6 14 -8 22z"/></g><path d="M16 60 h-6 M10 54 l4 6 l-4 6" stroke="#c8324a" stroke-width="2" fill="none"/>`),
+  jacket:S(`<path d="M30 20 h40 l18 18 l-8 10 l-8 -6 v44 h-44 v-44 l-8 6 l-8 -10z" fill="#3f6fa8"/><path d="M42 20 q8 10 16 0" fill="#2c5486"/><path d="M50 30 v56" stroke="#e8dcc4" stroke-width="2"/><g fill="#e8dcc4"><circle cx="54" cy="40" r="1.6"/><circle cx="54" cy="52" r="1.6"/><circle cx="54" cy="64" r="1.6"/></g><rect x="34" y="56" width="10" height="8" fill="#2c5486"/><rect x="60" y="56" width="10" height="8" fill="#2c5486"/>`),
+  rack:S(`<path d="M12 22 h76" stroke="#6b6f72" stroke-width="3"/><path d="M14 22 v66 M86 22 v66" stroke="#6b6f72" stroke-width="3"/><g><path d="M22 28 h14 l4 6 v40 h-22 v-40z" fill="#c8324a"/><path d="M40 28 h14 l4 6 v44 h-22 v-44z" fill="#e9b872"/><path d="M58 28 h14 l4 6 v38 h-22 v-38z" fill="#3f7a5c"/></g><g stroke="#6b6f72" stroke-width="1.5" fill="none"><path d="M29 28 q0 -6 0 -6"/><path d="M47 28 q0 -6 0 -6"/><path d="M65 28 q0 -6 0 -6"/></g>`),
+  bag:S(`<path d="M24 36 h52 l-4 50 h-44z" fill="#2f5aa8"/><path d="M38 36 q0 -18 12 -18 q12 0 12 18" fill="none" stroke="#1f3f7a" stroke-width="4"/><rect x="40" y="50" width="20" height="14" rx="2" fill="#f7f1e8"/><path d="M44 57 h12" stroke="#2f5aa8" stroke-width="2"/>`),
+  weave:S(`<rect x="10" y="20" width="80" height="60" fill="#1e2a52"/><g fill="#c8324a"><rect x="10" y="26" width="80" height="6"/><rect x="10" y="68" width="80" height="6"/></g><g fill="#f2c14e"><path d="M20 44 l8 6 l-8 6 l-8 -6z"/><path d="M40 44 l8 6 l-8 6 l-8 -6z"/><path d="M60 44 l8 6 l-8 6 l-8 -6z"/><path d="M80 44 l8 6 l-8 6 l-8 -6z"/></g><g stroke="#f7f1e8" stroke-width="1.5"><path d="M10 38 h80 M10 62 h80"/></g><g stroke="#e8dcc4" stroke-width="2"><path d="M14 80 v8 M22 80 v8 M30 80 v8 M38 80 v8 M46 80 v8 M54 80 v8 M62 80 v8 M70 80 v8 M78 80 v8 M86 80 v8"/></g>`),
+  chips:S(`<path d="M26 14 h48 l-2 6 l4 4 v52 l-4 4 l2 6 h-48 l2 -6 l-4 -4 v-52 l4 -4z" fill="#d0761b"/><rect x="30" y="34" width="40" height="22" rx="4" fill="#fff4dc"/><path d="M36 50 q14 -14 28 0" fill="none" stroke="#c8324a" stroke-width="4"/><g fill="#f2c44b"><ellipse cx="40" cy="68" rx="7" ry="4"/><ellipse cx="58" cy="70" rx="8" ry="4"/></g>`),
+  mango:S(`<rect x="22" y="12" width="56" height="76" rx="6" fill="#f2c44b"/><rect x="22" y="12" width="56" height="10" rx="4" fill="#3f8a4a"/><path d="M36 62 q-4 -22 14 -26 q18 4 14 26 q-14 12 -28 0z" fill="#ef8a1f"/><path d="M50 36 q4 -8 10 -8" fill="none" stroke="#3f8a4a" stroke-width="3"/>`),
+  choco:S(`<g><rect x="16" y="30" width="30" height="30" rx="3" fill="#6b3d24"/><rect x="20" y="34" width="22" height="22" rx="2" fill="#8a5434"/><rect x="52" y="40" width="30" height="30" rx="3" fill="#f3e3c4"/><rect x="56" y="44" width="22" height="22" rx="2" fill="#c89a63"/><circle cx="34" cy="76" r="8" fill="#5a3420"/></g>`),
+  cracker:S(`<g><rect x="18" y="24" width="44" height="44" rx="4" fill="#e8c27a"/><g fill="#c99a52"><circle cx="30" cy="36" r="2"/><circle cx="46" cy="36" r="2"/><circle cx="30" cy="54" r="2"/><circle cx="46" cy="54" r="2"/><circle cx="38" cy="45" r="2"/></g><rect x="42" y="46" width="40" height="12" rx="6" fill="#d8a85a"/><rect x="42" y="56" width="40" height="6" fill="#fff8ec"/><rect x="42" y="62" width="40" height="12" rx="6" fill="#d8a85a"/></g>`),
+  boba:S(`<path d="M30 30 h40 l-5 58 h-30z" fill="#e9d2b0" stroke="#b08a5a" stroke-width="1.5"/><path d="M27 24 h46 v7 h-46z" fill="#c8324a"/><path d="M55 24 l8 -16" stroke="#3f7a5c" stroke-width="5" stroke-linecap="round"/><g fill="#3b2a20"><circle cx="40" cy="80" r="4"/><circle cx="50" cy="82" r="4"/><circle cx="59" cy="79" r="4"/><circle cx="45" cy="73" r="4"/><circle cx="55" cy="72" r="4"/></g>`),
+  cone:S(`<path d="M36 48 l14 44 l14 -44z" fill="#d79a3d"/><path d="M40 52 l18 18 M44 62 l12 -10 M38 50 l22 20" stroke="#b07a2a" stroke-width="1.5" fill="none"/><circle cx="42" cy="40" r="12" fill="#f4b6c2"/><circle cx="58" cy="40" r="12" fill="#a77bc9"/><circle cx="50" cy="26" r="12" fill="#fff4dc"/><circle cx="52" cy="16" r="3" fill="#c8324a"/>`),
+  nail:S(`<rect x="38" y="40" width="24" height="46" rx="6" fill="#c8324a"/><rect x="42" y="44" width="5" height="34" rx="2" fill="#fff" opacity=".35"/><rect x="42" y="20" width="16" height="20" rx="2" fill="#2b2b2b"/><g fill="#f4b6c2"><ellipse cx="22" cy="74" rx="6" ry="9"/><ellipse cx="78" cy="70" rx="6" ry="9"/></g><circle cx="76" cy="30" r="3" fill="#e3b265"/><circle cx="24" cy="36" r="2" fill="#e3b265"/>`),
+};
+const KEY="baguio-sm-done-v1";
+let done={};
+try{done=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(e){done={}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(done))}catch(e){}}
+let state={cat:"all",q:"",hide:false,pin:null};
+try{const c=localStorage.getItem(KEY+"-cat");if(c&&CATS.some(x=>x.id===c))state.cat=c}catch(e){}
+const hash=location.hash.slice(1);if(CATS.some(x=>x.id===hash))state.cat=hash;
+const catOf=id=>CATS.find(c=>c.id===id);
+
+const chips=document.getElementById("chips");
+CATS.forEach(c=>{
+  const b=document.createElement("button");
+  b.className="chip";b.type="button";b.dataset.id=c.id;
+  if(c.special)b.classList.add("special");
+  b.innerHTML=(c.color?`<i class="dot" style="background:${c.color}"></i>`:"")+c.label;
+  b.onclick=()=>{state.cat=c.id;state.pin=null;try{localStorage.setItem(KEY+"-cat",c.id)}catch(e){};render()};
+  chips.appendChild(b);
+});
+document.getElementById("q").addEventListener("input",e=>{state.q=e.target.value.trim().toLowerCase();state.pin=null;render()});
+document.getElementById("hideDone").addEventListener("change",e=>{state.hide=e.target.checked;render()});
+
+function esc(s){return String(s).replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]))}
+function match(it){
+  if(state.hide&&done[it.id])return false;
+  if(state.cat!=="all"&&it.cat!==state.cat)return false;
+  if(!state.q)return true;
+  return [it.name,it.en,it.desc,it.floor||"",(it.buy||[]).join(" "),(MENU[it.id]||[]).join(" ")].join(" ").toLowerCase().includes(state.q);
+}
+const NOTES={
+  spot:"搭車景點挑的是有收門票或有管制、白天開放、環境整齊的地方。碧瑤整體治安算不錯，但市場、夜市和週末人潮多的地方要顧好包包和手機。外出景點建議白天去、搭有跳錶的計程車或 Grab，天黑後回到 Session Road 和 SM 一帶。",
+  chicken:"新加的 7 家都在 SM 商場裡。標「Google」的星等來自 Wanderlog 轉載的 Google 評分，Bonchon 和 Mang Inasal 分數不高也照實標出；其他店查不到可靠的評分。",
+  rated:"星等與評論數取自 Tripadvisor（2026 年 10 月），不是 Google；距離為從 SM 出發的直線距離，碧瑤坡多，實際步行會稍久。Agara Ramen 和 Bistro Lokal 超過步行 10 分鐘，排在一起方便比較。最新 Google 評分請點各店的 Google 連結。",
+  market:"都在主館 Lower Ground 的 SM Supermarket，一次買齊。價格比機場和伴手禮店便宜很多。",
+  drink:"SM 裡的台灣品牌都還在外送平台上架，但個別店位會變動，到了可以看商場樓層看板。菜單和台灣大同小異，甜度通常偏甜，記得調。",
+  ice:"標「Google」的星等來自 Wanderlog 轉載的 Google 評分；其他店查不到可靠的評分，點 Google 連結看最新評論。",
+  nail:"美甲店的 Google 評論我讀不到，也找不到可靠的評分，這裡只列有實際查到地點的店。去之前先點 Google 連結看評論和作品照片，建議先預約。"
+};
+const mapUrl=it=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(it.q+", Baguio, Philippines");
+function card(it){
+  const map=mapUrl(it);
+  return `<article class="item${done[it.id]?" done":""}" id="card-${it.id}">
+    <input class="check" type="checkbox" id="c-${it.id}" ${done[it.id]?"checked":""} aria-label="${esc(it.name)} 已完成">
+    <div class="body">
+      <div class="top"><label class="name" for="c-${it.id}">${esc(it.name)}</label><span class="en">${esc(it.en)}</span></div>
+      <div class="tags">${it.rating?`<span class="tag star">★ ${it.rating.toFixed(1)}<small>${it.reviews.toLocaleString()} 則${it.src?" · "+it.src:""}</small></span>`:""}${it.must?'<span class="tag must">必去必買</span>':""}<span class="tag ${it.walk?"walk":"ride"}">${esc(it.dist)}</span></div>
+      <dl class="facts">
+        <dt>營業</dt><dd>${esc(it.hours)}${it.ok||it.hours==="請看 Google"?"":' <span class="ref">參考，出發前請確認</span>'}</dd>
+        ${it.floor?`<dt>位置</dt><dd>${esc(it.floor)}</dd>`:""}
+        ${it.fee?`<dt>門票</dt><dd>${esc(it.fee)}</dd>`:""}
+        ${it.safe?`<dt>安全感</dt><dd>${esc(it.safe)}</dd>`:""}
+      </dl>
+      <p class="desc">${esc(it.desc)}</p>
+      ${it.buy?`<ul class="buy">${it.buy.map(b=>`<li>${esc(b)}</li>`).join("")}</ul>`:""}
+      ${MENU[it.id]?`<div class="menu"><b>招牌必點</b><ul>${MENU[it.id].map(m=>`<li>${esc(m)}</li>`).join("")}</ul></div>`:""}
+      <div class="links">${it.cat==="market"?`<a class="btn" href="https://www.google.com/search?tbm=isch&q=${encodeURIComponent(it.en+" Philippines")}" target="_blank" rel="noopener">看實品照片 ↗</a>`:`<a class="btn" href="${map}" target="_blank" rel="noopener">Google 評論・照片 ↗</a>`}${MENU[it.id]?`<a class="btn" href="${map}" target="_blank" rel="noopener">看菜單照片 ↗</a>`:""}${it.p||it.far?`<button class="btn linkbtn" type="button" data-pin="${it.far?"far:"+it.id:it.p}">在地圖上看</button>`:""}</div>
+    </div><span class="art" aria-hidden="true">${ART[ARTOF[it.id]]||""}</span></article>`;
+}
+
+/* ---------- schematic map ---------- */
+const B={lat0:16.4062,lat1:16.4180,lon0:120.5898,lon1:120.6032};
+const W=400,H=Math.round(W*(B.lat1-B.lat0)/((B.lon1-B.lon0)*Math.cos(16.41*Math.PI/180)));
+const xy=([la,lo])=>[ (lo-B.lon0)/(B.lon1-B.lon0)*W, (B.lat1-la)/(B.lat1-B.lat0)*H ];
+const line=pts=>pts.map((p,i)=>(i?"L":"M")+xy(p).map(v=>v.toFixed(1)).join(" ")).join(" ");
+const PLACE_NAME={ililikha:"Ili-Likha 藝術村",portavaga:"Porta Vaga Mall",yifang:"一芳（Assumption Rd）",abanao:"Abanao Street",sm:"SM City Baguio",sky:"Sky Ranch",session:"Session Road",burnham:"Burnham Park",cathedral:"主教座堂",market:"公有市場",night:"夜市",goodtaste:"Good Taste",hill:"Hill Station",ruins:"Café by the Ruins",gulay:"Oh My Gulay",maharlika:"Maharlika"};
+function drawMap(list){
+  const groups={};
+  list.forEach(it=>{ if(it.p){(groups[it.p]=groups[it.p]||[]).push(it)} });
+  const fars=list.filter(it=>it.far);
+  const [lx,ly]=xy([16.4122,120.5933]);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="SM City Baguio 周邊示意地圖">
+  <rect width="${W}" height="${H}" fill="var(--map-bg)"/>
+  <g fill="var(--map-pine)" opacity=".55">${[[16.4170,120.6020],[16.4065,120.5910],[16.4072,120.5960],[16.4175,120.5995],[16.4100,120.6025],[16.4068,120.6025]].map(p=>{const[x,y]=xy(p);return `<path d="M${x} ${y-9} l6 12 h-12z"/><path d="M${x+9} ${y-4} l5 10 h-10z"/>`}).join("")}</g>
+  <path d="${line([[16.4142,120.5905],[16.4148,120.5928],[16.4140,120.5946],[16.4104,120.5948],[16.4098,120.5922],[16.4110,120.5904]])}Z" fill="var(--map-park)"/>
+  <ellipse cx="${lx}" cy="${ly}" rx="22" ry="11" fill="var(--map-water)"/>
+  <g fill="none" stroke="var(--map-road)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="${line([[16.4086,120.6004],[16.4100,120.5990],[16.4120,120.5975],[16.4143,120.5961]])}" stroke-width="7"/>
+    <path d="${line([[16.4143,120.5961],[16.4160,120.5946],[16.4178,120.5930]])}" stroke-width="5"/>
+    <path d="${line([[16.4098,120.5956],[16.4143,120.5952]])}" stroke-width="4"/>
+    <path d="${line([[16.4086,120.6004],[16.4072,120.6030]])}" stroke-width="4"/>
+  </g>
+  <g font-size="9" fill="var(--muted)" font-family="var(--body)">
+    <text x="${xy([16.4112,120.5986])[0]}" y="${xy([16.4112,120.5986])[1]}" transform="rotate(-38 ${xy([16.4112,120.5986]).join(" ")})">Session Rd</text>
+    <text x="${xy([16.4163,120.5950])[0]}" y="${xy([16.4163,120.5950])[1]}" transform="rotate(-40 ${xy([16.4163,120.5950]).join(" ")})">Magsaysay Ave</text>
+    <text x="${xy([16.4100,120.5959])[0]}" y="${xy([16.4100,120.5959])[1]}" transform="rotate(-88 ${xy([16.4100,120.5959]).join(" ")})">Harrison Rd</text>
+  </g>
+  <g font-size="10" fill="var(--muted)" font-family="var(--body)"><text x="${W-22}" y="18" text-anchor="middle">N</text><path d="M${W-22} 22 l-5 12 l5 -3 l5 3z" fill="var(--muted)"/></g>`;
+  // far arrows
+  const [cx,cy]=xy(P.sm);
+  fars.forEach(it=>{
+    const f=FAR[it.id];const a=f.angle*Math.PI/180;
+    let r=1000,ex,ey;
+    const dx=Math.cos(a),dy=Math.sin(a);
+    const tx=dx>0?(W-14-cx)/dx:(14-cx)/dx, ty=dy>0?(H-14-cy)/dy:(14-cy)/dy;
+    r=Math.min(tx,ty);ex=cx+dx*r;ey=cy+dy*r;
+    const col=catOf(it.cat).color;
+    const anchor=ex>W/2?"end":"start";
+    s+=`<g class="pin" data-pin="far:${it.id}" tabindex="0" role="button" aria-label="${esc(it.name)}，${f.dir}${f.km}">
+      <path d="M${cx+dx*24} ${cy+dy*24} L${ex} ${ey}" stroke="${col}" stroke-width="1.5" stroke-dasharray="3 3"/>
+      <circle cx="${ex}" cy="${ey}" r="7" fill="${col}"/>
+      <text x="${ex+(anchor==="end"?-11:11)}" y="${ey+(ey<20?12:4)}" text-anchor="${anchor}" font-size="10" font-weight="700" fill="var(--fg)" paint-order="stroke" stroke="var(--map-bg)" stroke-width="3">${esc(f.label||(it.en.split(" ")[0]==="Good"?"Good Shepherd":it.en))}・${f.dir}${f.km}</text></g>`;
+  });
+  Object.entries(groups).forEach(([k,its])=>{
+    const [x,y]=xy(P[k]);
+    const cats=[...new Set(its.map(i=>i.cat))];
+    const col=cats.length===1?catOf(cats[0]).color:"var(--pine)";
+    const sel=state.pin===k;
+    const label=PLACE_NAME[k];
+    const right=x<W-90;
+    s+=`<g class="pin${sel?" sel":""}" data-pin="${k}" tabindex="0" role="button" aria-label="${esc(label)}，${its.length} 項">
+      <circle cx="${x}" cy="${y}" r="${sel?13:11}" fill="${col}" stroke="var(--map-bg)" stroke-width="2"/>
+      <text x="${x}" y="${y+4}" text-anchor="middle" font-size="11" font-weight="700" fill="var(--map-bg)">${its.length}</text>
+      <text x="${right?x+15:x-15}" y="${y+4}" text-anchor="${right?"start":"end"}" font-size="10.5" font-weight="700" fill="var(--fg)" paint-order="stroke" stroke="var(--map-bg)" stroke-width="3">${esc(label)}</text></g>`;
+  });
+  s+="</svg>";
+  document.getElementById("map").innerHTML=s;
+  document.querySelectorAll("#map .pin").forEach(g=>{
+    const go=()=>{state.pin=state.pin===g.dataset.pin?null:g.dataset.pin;render(true)};
+    g.addEventListener("click",go);
+    g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}});
+  });
+  // popup
+  const pop=document.getElementById("pop");
+  if(!state.pin){pop.hidden=true;return}
+  let its,title;
+  if(state.pin.startsWith("far:")){const id=state.pin.slice(4);its=list.filter(i=>i.id===id);const f=FAR[id];title=`從 SM 往${f.dir}${f.km}，建議搭計程車`}
+  else{its=groups[state.pin]||[];title=PLACE_NAME[state.pin]}
+  if(!its.length){pop.hidden=true;return}
+  pop.hidden=false;
+  pop.innerHTML=`<div class="pophead"><b>${esc(title)}</b><button type="button" class="x" aria-label="關閉">×</button></div>
+    <div class="poplist">${its.map(i=>`<button type="button" class="popitem" data-go="${i.id}"><i class="dot" style="background:${catOf(i.cat).color}"></i>${esc(i.name)}<span>${esc(i.hours)}</span></button>`).join("")}</div>`;
+  pop.querySelector(".x").onclick=()=>{state.pin=null;render(true)};
+  pop.querySelectorAll(".popitem").forEach(b=>b.onclick=()=>{
+    const el=document.getElementById("card-"+b.dataset.go);
+    if(el){el.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"center"});el.classList.add("flash");setTimeout(()=>el.classList.remove("flash"),1400)}
+  });
+}
+
+function renderFloors(){
+  const q=state.q;
+  let html=`<section class="floors"><h2>SM City Baguio 樓層導覽<small>${MALL}</small></h2>`;
+  FLOORS.forEach(z=>{
+    let body="";
+    z.floors.forEach(f=>{
+      const gs=f.groups.map(g=>{
+        const its=g.items.filter(([n,t])=>!q||(n+t+g.k).toLowerCase().includes(q));
+        if(!its.length)return "";
+        return `<div class="fgroup"><span class="fk">${esc(g.k)}</span><ul>${its.map(([n,t])=>`<li><b>${esc(n)}</b><span>${esc(t)}</span></li>`).join("")}</ul></div>`;
+      }).join("");
+      if(!gs)return;
+      body+=`<div class="floor">${f.lv?`<div class="lv"><span class="lvtag">${esc(f.lv)}</span><span class="feat">${esc(f.feat)}</span></div>`:""}${gs}</div>`;
+    });
+    if(!body)return;
+    html+=`<div class="zone${z.unknown?" unknown":""}"><h3>${esc(z.zone)}</h3>${z.note?`<p class="znote">${esc(z.note)}</p>`:""}${body}</div>`;
+  });
+  html+=`<p class="maphint">樓層資料來自 SM Supermalls 官方店家頁與美食介紹、Wikipedia；SM City Baguio 約有 250 家店，這裡列的是查得到的主要店家，不是完整名單。</p></section>`;
+  return html;
+}
+function render(keepScroll){
+  chips.querySelectorAll(".chip").forEach(b=>b.setAttribute("aria-pressed",b.dataset.id===state.cat));
+  const fl=state.cat==="floors";
+  document.getElementById("mapbox").hidden=fl;
+  document.getElementById("progress").hidden=fl;
+  document.querySelector(".toggle").hidden=fl;
+  if(fl){document.getElementById("main").innerHTML=renderFloors();return}
+  const list=ITEMS.filter(match);
+  drawMap(list);
+  const cats=state.cat==="all"?CATS.filter(c=>c.id!=="all"&&!c.special):CATS.filter(c=>c.id===state.cat);
+  let html="";
+  cats.forEach(c=>{
+    const l=list.filter(i=>i.cat===c.id);
+    if(c.id==="rated")l.sort((x,y)=>y.rating-x.rating||y.reviews-x.reviews);
+    if(!l.length)return;
+    html+=`<section><h2><i class="dot big" style="background:${c.color}"></i>${c.label}<small>${c.sub} · ${l.length} 項</small></h2>${NOTES[c.id]?`<p class="maphint">${NOTES[c.id]}</p>`:""}<div class="list">${l.map(card).join("")}</div></section>`;
+  });
+  document.getElementById("main").innerHTML=html||`<p class="empty">沒有符合的項目，換個關鍵字試試。</p>`;
+  const scope=ITEMS.filter(i=>state.cat==="all"||i.cat===state.cat);
+  const n=scope.filter(i=>done[i.id]).length;
+  document.getElementById("progress").textContent=`已完成 ${n} / ${scope.length}`;
+  document.querySelectorAll(".check").forEach(cb=>cb.addEventListener("change",()=>{
+    const id=cb.id.slice(2);if(cb.checked)done[id]=1;else delete done[id];save();render(true);
+  }));
+  document.querySelectorAll("[data-pin].linkbtn").forEach(b=>b.addEventListener("click",()=>{
+    state.pin=b.dataset.pin;render(true);
+    document.getElementById("mapbox").scrollIntoView({behavior:"smooth",block:"start"});
+  }));
+}
+render();
+
+</script>
+
+</body>
+</html>
